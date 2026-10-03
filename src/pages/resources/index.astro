@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import Filters from '../../components/Filters.astro';
+import { published } from '../../lib/content';
+const resources = await published('resources');
+---
+<Layout title="资料库" description="带收录理由、作者和访问日期的 AI 原始资料。">
+  <div class="wrap">
+    <header class="page-head"><p class="eyebrow">THE READING SHELF</p><h1>资料库</h1><p>链接回到原始来源，摘要说明为什么值得读。先明确要解决的问题，再决定读哪一份资料。</p></header>
+    <Filters mode="resources" />
+    <div class="cards">{resources.map(entry => <Card entry={entry} />)}</div>
+  </div>
+</Layout>

@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { topics } from '../../site';
+import { published } from '../../lib/content';
+import { withBase } from '../../lib/paths';
+export function getStaticPaths() { return Object.entries(topics).map(([topic, label]) => ({ params: { topic }, props: { label } })); }
+const { topic } = Astro.params;
+const { label } = Astro.props;
+const groups = await Promise.all(['tracks', 'notes', 'resources', 'episodes'].map(async collection => ({
+  label: ({ tracks: '学习路径', notes: '笔记与实验', resources: '原始资料', episodes: '播客节目' })[collection],
+  entries: (await published(collection as 'tracks' | 'notes' | 'resources' | 'episodes')).filter(entry => entry.data.topic === topic),
+})));
+---
+<Layout title={label}>
+  <div class="wrap"><header class="page-head"><nav class="breadcrumb" aria-label="面包屑"><a href={withBase('topics/')}>全部主题</a><span>/</span><span>{label}</span></nav><p class="eyebrow">TOPIC / {topic}</p><h1>{label}</h1><p>从相关笔记、实验和原始资料开始，建立自己的理解。</p></header>
+    {groups.some(group => group.entries.length) ? groups.filter(group => group.entries.length).map(group => <section class="section"><div class="section-heading"><h2>{group.label}</h2></div><div class="cards">{group.entries.map(entry => <Card entry={entry} />)}</div></section>) : <p class="empty-state">这个主题正在整理中。<a href={withBase('tracks/')}>先沿着已有学习路径开始 →</a></p>}
+  </div>
+</Layout>

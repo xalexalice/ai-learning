@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { published } from '../lib/content';
+import { withBase, entryPath } from '../lib/paths';
+import { topics } from '../site';
+const [notes, resources, tracks] = await Promise.all([published('notes'), published('resources'), published('tracks')]);
+const track = tracks[0];
+---
+<Layout>
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">A PERSONAL FIELD GUIDE TO AI</p>
+        <h1 id="hero-title">把读过的知识，<br />变成<em>自己的理解。</em></h1>
+        <p class="hero-intro">从一份原始资料，到一篇清楚的笔记，再到一个可复现的实验。这里记录 AI 学习中的问题、理解和验证。</p>
+        <div class="actions"><a class="button" href={track ? entryPath('tracks', track.data.slug) : withBase('tracks/')}>从学习路径开始 <span aria-hidden="true">→</span></a><a class="text-link" href={withBase('notes/')}>浏览全部笔记</a></div>
+        <p class="hero-note">{notes.length} 篇笔记与实验 · {resources.length} 份精选资料 · {tracks.length} 条学习路径</p>
+      </div>
+      <aside class="field-note" aria-label="学习方法">
+        <div class="field-note-top"><span>Field notes</span><small>一个学习闭环</small></div>
+        <ol class="learning-loop">
+          <li><span class="loop-number">01</span><div><h2>收录 · 从源头阅读</h2><p>保留作者、版本与原始链接</p></div></li>
+          <li><span class="loop-number">02</span><div><h2>理解 · 用自己的语言</h2><p>回答问题，也说明适用边界</p></div></li>
+          <li><span class="loop-number">03</span><div><h2>验证 · 让结论可复现</h2><p>记录输入、环境与失败案例</p></div></li>
+          <li><span class="loop-number">04</span><div><h2>复习 · 再解释一次</h2><p>沿着路径，把零散知识连起来</p></div></li>
+        </ol>
+        <p class="field-note-bottom">少收藏一点，多理解一点。</p>
+      </aside>
+    </section>
+    <section class="section" aria-labelledby="track-heading">
+      <div class="section-heading"><div><span class="eyebrow">START HERE / 从这里开始</span><h2 id="track-heading">沿着一条路径，系统学习</h2></div><a class="text-link" href={withBase('tracks/')}>全部路径 →</a></div>
+      {track ? <div class="track-feature"><div><span class="eyebrow">入门路径 · {track.data.steps.length} 个步骤</span><h3>{track.data.title}</h3><p>{track.data.summary}</p><a class="text-link" href={entryPath('tracks', track.data.slug)}>查看目标与完成标准 →</a></div><ol class="track-steps">{track.data.steps.map((step, i) => <li><a href={entryPath('notes', step.note)}><span class="step-number">{String(i + 1).padStart(2, '0')}</span><span>{step.title}</span><span class="arrow" aria-hidden="true">↗</span></a></li>)}</ol></div> : <p class="empty-state">学习路径整理中。先从下方笔记开始阅读。</p>}
+    </section>
+    <section class="section" aria-labelledby="notes-heading">
+      <div class="section-heading"><div><span class="eyebrow">LATEST NOTES / 近期记录</span><h2 id="notes-heading">理解与验证，都留下痕迹</h2></div><a class="text-link" href={withBase('notes/')}>全部笔记 →</a></div>
+      <div class="cards">{notes.slice(0, 3).map(entry => <Card entry={entry} />)}</div>
+      {!notes.length && <p class="empty-state">还没有公开笔记。</p>}
+    </section>
+    <section class="section" aria-labelledby="topics-heading">
+      <div class="section-heading"><div><span class="eyebrow">EXPLORE / 按主题探索</span><h2 id="topics-heading">从你关心的问题出发</h2></div></div>
+      <div class="topic-grid">{Object.entries(topics).map(([key, label]) => <a class="topic-tile" href={withBase(`topics/${key}/`)}><span>{label}</span><small>{notes.filter(entry => entry.data.topic === key).length} 篇笔记</small></a>)}</div>
+    </section>
+  </div>
+</Layout>

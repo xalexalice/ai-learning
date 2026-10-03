@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { topics } from '../../site';
+import { withBase } from '../../lib/paths';
+import { published } from '../../lib/content';
+const notes = await published('notes');
+const resources = await published('resources');
+---
+<Layout title="主题">
+  <div class="wrap"><header class="page-head"><p class="eyebrow">THE KNOWLEDGE MAP</p><h1>按主题探索</h1><p>主题帮你找到相关问题，学习路径把这些问题连接起来。没有内容的主题会随着学习逐步补齐。</p></header>
+    <div class="topic-grid">{Object.entries(topics).map(([key, label]) => <a class="topic-tile" href={withBase(`topics/${key}/`)}><span>{label}</span><small>{notes.filter(note => note.data.topic === key).length} 笔记 / {resources.filter(resource => resource.data.topic === key).length} 资料</small></a>)}</div>
+  </div>
+</Layout>

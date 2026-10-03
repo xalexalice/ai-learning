@@ -1,0 +1,78 @@
+---
+// Adapted from AstroPaper's Pagefind integration. See THIRD_PARTY.md.
+import '@pagefind/default-ui/css/ui.css';
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/paths';
+---
+<Layout title="搜索" noindex>
+  <div class="wrap"><header class="page-head"><p class="eyebrow">FIND AN IDEA</p><h1>搜索知识库</h1><p>搜索已发布的笔记、原始资料和学习路径。试试“检索增强”“RAG”或“token”。</p></header>
+    <div id="pagefind-search" data-bundle-path={withBase('pagefind/')} data-pagefind-ignore></div>
+    <p id="search-message" class="callout" hidden role="status"></p>
+    <noscript><p class="callout">全文搜索需要 JavaScript。你也可以<a href={withBase('topics/')}>按主题浏览内容</a>。</p></noscript>
+  </div>
+</Layout>
+<script>
+  async function initSearch() {
+    const element = document.querySelector<HTMLElement>('#pagefind-search');
+    const message = document.querySelector<HTMLElement>('#search-message');
+    if (!element?.dataset.bundlePath || !message) return;
+    if (import.meta.env.DEV) {
+      message.hidden = false;
+      message.textContent = '全文搜索在生产构建中生成。运行 npm run build，再运行 npm run preview 即可检索。';
+      return;
+    }
+    try {
+      const { PagefindUI } = await import('@pagefind/default-ui');
+      const search = new PagefindUI({
+        element: '#pagefind-search', bundlePath: element.dataset.bundlePath,
+        showImages: false, showSubResults: true,
+        translations: {
+          language: 'zh-CN', placeholder: '搜索笔记、资料与路径…', clear_search: '清除', search_label: '搜索全站',
+          filters_label: '筛选结果', searching: '正在搜索“[SEARCH_TERM]”…',
+          zero_results: '没有找到“[SEARCH_TERM]”的结果。试试其他关键词。',
+          one_result: '“[SEARCH_TERM]”有 [COUNT] 条结果', many_results: '“[SEARCH_TERM]”有 [COUNT] 条结果',
+          load_more: '加载更多结果',
+        },
+        processResult(result: { meta: Record<string, string> }) {
+          // The default UI displays extra metadata as tags; give the summary a reader-facing label.
+          if (result.meta.description) {
+            result.meta['摘要'] = result.meta.description;
+            delete result.meta.description;
+          }
+          return result;
+        },
+        processTerm(term: string) {
+          const params = new URLSearchParams(location.search);
+          if (term.trim()) params.set('q', term); else params.delete('q');
+          history.replaceState(null, '', location.pathname + (params.size ? `?${params}` : ''));
+          return term;
+        },
+      });
+      const query = new URLSearchParams(location.search).get('q');
+      if (query) search.triggerSearch(query);
+      // Pagefind does not call processTerm when its input is cleared.
+      function clearQuery() {
+        const params = new URLSearchParams(location.search);
+        params.delete('q');
+        history.replaceState(null, '', location.pathname + (params.size ? `?${params}` : ''));
+      }
+      element.querySelector('.pagefind-ui__search-clear')?.addEventListener('click', clearQuery);
+      element.querySelector<HTMLInputElement>('.pagefind-ui__search-input')?.addEventListener('input', event => {
+        if (!(event.target as HTMLInputElement).value.trim()) clearQuery();
+      });
+    } catch {
+      message.hidden = false;
+      message.textContent = '搜索暂时无法加载。请刷新页面，或从主题和资料库继续浏览。';
+    }
+  }
+  initSearch();
+</script>
+<style is:global>
+  #pagefind-search { --pagefind-ui-font: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; --pagefind-ui-text: #22332d; --pagefind-ui-background: #fff; --pagefind-ui-border: #b7c5b6; --pagefind-ui-primary: #214f3f; --pagefind-ui-border-radius: 6px; --pagefind-ui-border-width: 1px; --pagefind-ui-scale: .92; }
+  #pagefind-search input { font-weight: 400; }
+  #pagefind-search :focus-visible { outline: 3px solid #376aaf; outline-offset: 3px; }
+  #pagefind-search .pagefind-ui__result-link { color: #214f3f; }
+  #pagefind-search .pagefind-ui__filter-name { min-height: 44px; }
+  #pagefind-search .pagefind-ui__filter-label { display: inline-flex; align-items: center; min-height: 44px; }
+  #pagefind-search .pagefind-ui__search-clear { min-width: 44px; }
+</style>

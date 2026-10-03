@@ -1,0 +1,31 @@
+{
+  "name": "ai-learning",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "dev": "npm run content:check && astro dev --ignore-lock",
+    "content:check": "node scripts/check-content.ts",
+    "test": "node --test tests/content.test.ts && node scripts/retrieval-lab.mjs --check",
+    "check": "npm run content:check && npm test && astro check",
+    "build": "node scripts/clean.mjs && npm run check && astro build && pagefind --site dist && node scripts/check-dist.mjs",
+    "preview": "astro preview --ignore-lock",
+    "test:browser": "playwright test",
+    "test:publication": "node scripts/test-publication.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.5",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@pagefind/default-ui": "1.5.2",
+    "@playwright/test": "1.63.0",
+    "gray-matter": "4.0.3",
+    "pagefind": "1.5.2",
+    "typescript": "6.0.3"
+  }
+}

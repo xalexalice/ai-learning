@@ -1,0 +1,38 @@
+{
+  "dataset": "3 documents / 5 fixed queries; top-1 substring matching",
+  "rows": [
+    {
+      "query": "RAG",
+      "expected": "rag",
+      "exact": "rag",
+      "normalized": "rag"
+    },
+    {
+      "query": "rag",
+      "expected": "rag",
+      "exact": null,
+      "normalized": "rag"
+    },
+    {
+      "query": "Ｔｏｋｅｎ",
+      "expected": "token",
+      "exact": null,
+      "normalized": "token"
+    },
+    {
+      "query": "回归",
+      "expected": "eval",
+      "exact": "eval",
+      "normalized": "eval"
+    },
+    {
+      "query": "知识增强",
+      "expected": "rag",
+      "exact": null,
+      "normalized": null
+    }
+  ],
+  "exactHits": 2,
+  "normalizedHits": 4,
+  "total": 5
+}

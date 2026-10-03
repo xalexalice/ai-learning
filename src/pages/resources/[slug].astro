@@ -1,0 +1,28 @@
+---
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Toc from '../../components/Toc.astro';
+import { published } from '../../lib/content';
+import { withBase, entryPath } from '../../lib/paths';
+import { topics, resourceTypes } from '../../site';
+export async function getStaticPaths() {
+  return (await published('resources')).map(entry => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content, headings } = await render(entry);
+const notes = (await published('notes')).filter(note => note.data.sources.includes(data.slug));
+---
+<Layout title={data.title} description={data.summary}>
+  <div class="wrap"><article data-pagefind-body>
+    <header class="article-head"><nav class="breadcrumb" aria-label="面包屑" data-pagefind-ignore><a href={withBase()}>首页</a><span>/</span><a href={withBase('resources/')}>资料库</a></nav>
+      <span class="eyebrow" data-pagefind-filter="类型">{resourceTypes[data.type]}</span> · <a class="topic-label" data-pagefind-filter="主题" href={withBase(`topics/${data.topic}/`)}>{topics[data.topic]}</a>
+      <h1 data-pagefind-meta="title">{data.title}</h1><p class="summary" data-pagefind-meta="description">{data.summary}</p>
+      <div class="article-meta"><span>{data.author}</span><span>{data.version}</span><span>访问于 {data.accessedAt}</span>{data.sourcePublishedAt && <span>原文发布于 {data.sourcePublishedAt}</span>}</div>
+      <a class="button" href={data.sourceUrl!}>阅读原始资料 <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="article-grid"><div class="article-body"><div class="prose"><Content /></div><p class="callout">复用说明：{data.reuseRights}</p>
+      {notes.length > 0 && <section class="article-relations" data-pagefind-ignore><h2>基于这份资料的笔记</h2><ul>{notes.map(note => <li><a href={entryPath('notes', note.data.slug)}>{note.data.title}</a></li>)}</ul></section>}
+    </div><Toc headings={headings} /></div>
+  </article></div>
+</Layout>

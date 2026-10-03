@@ -1,0 +1,26 @@
+---
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Toc from '../../components/Toc.astro';
+import { published } from '../../lib/content';
+import { withBase, entryPath } from '../../lib/paths';
+import { topics } from '../../site';
+export async function getStaticPaths() {
+  return (await published('tracks')).map(entry => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content, headings } = await render(entry);
+---
+<Layout title={data.title} description={data.summary}>
+  <div class="wrap"><article data-pagefind-body>
+    <header class="article-head"><nav class="breadcrumb" aria-label="面包屑" data-pagefind-ignore><a href={withBase()}>首页</a><span>/</span><a href={withBase('tracks/')}>学习路径</a></nav>
+      <span class="eyebrow" data-pagefind-filter="类型">学习路径</span> · <span class="topic-label" data-pagefind-filter="主题">{topics[data.topic]}</span>
+      <h1 data-pagefind-meta="title">{data.title}</h1><p class="summary" data-pagefind-meta="description">{data.summary}</p>
+      <div class="article-meta"><span>{data.steps.length} 个步骤</span><span>更新于 {data.updatedAt}</span></div>
+    </header>
+    <div class="article-grid"><div class="article-body"><div class="prose"><Content /></div>
+      <ol class="track-page-steps" aria-label="学习章节">{data.steps.map((step, i) => <li><span class="step-number">{String(i + 1).padStart(2, '0')}</span><div><h2><a href={entryPath('notes', step.note)}>{step.title}</a></h2><p>验证任务：{step.task}</p></div></li>)}</ol>
+    </div><Toc headings={headings} /></div>
+  </article></div>
+</Layout>

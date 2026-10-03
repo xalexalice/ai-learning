@@ -1,0 +1,14 @@
+{
+  "documents": [
+    { "id": "rag", "text": "RAG 将检索资料交给生成环节，引用必须能回到来源。" },
+    { "id": "token", "text": "Token 是模型处理文本的单位，上下文预算需要使用对应分词器计算。" },
+    { "id": "eval", "text": "固定评估样本，保存输入和预期结果，用于回归检查。" }
+  ],
+  "queries": [
+    { "query": "RAG", "expected": "rag" },
+    { "query": "rag", "expected": "rag" },
+    { "query": "Ｔｏｋｅｎ", "expected": "token" },
+    { "query": "回归", "expected": "eval" },
+    { "query": "知识增强", "expected": "rag" }
+  ]
+}

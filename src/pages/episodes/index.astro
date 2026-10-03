@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { published } from '../../lib/content';
+import { site } from '../../site';
+const episodes = await published('episodes');
+---
+<Layout title="播客" noindex={!episodes.length}>
+  <div class="wrap"><header class="page-head"><p class="eyebrow">LISTEN & REFLECT</p><h1>播客</h1><p>把经过核验的笔记讲清楚，每期节目保留文字稿和来源。</p>{episodes.length > 0 && site.podcastFeed && <a class="text-link" href={site.podcastFeed}>订阅节目 RSS →</a>}</header>
+    <div class="cards">{episodes.map(entry => <Card entry={entry} />)}</div>
+    {!episodes.length && <p class="empty-state">第一期节目尚未发布。先阅读知识笔记，音频完成后会在这里提供播放器和文字稿。</p>}
+  </div>
+</Layout>

@@ -1,0 +1,15 @@
+---
+import type { MarkdownHeading } from 'astro';
+interface Props { headings: MarkdownHeading[] }
+const headings = Astro.props.headings.filter(heading => heading.depth === 2 || heading.depth === 3);
+---
+{headings.length > 0 && <aside class="toc" data-pagefind-ignore aria-label="文章目录">
+  <details open><summary>本页目录</summary><ol>{headings.map(heading => <li class:list={{ 'toc-sub': heading.depth === 3 }}><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol></details>
+</aside>}
+<script>
+  const details = document.querySelector<HTMLDetailsElement>('.toc details');
+  const media = matchMedia('(max-width: 960px)');
+  function update() { if (details) details.open = !media.matches; }
+  media.addEventListener('change', update);
+  update();
+</script>

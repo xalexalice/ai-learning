@@ -1,0 +1,18 @@
+---
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Toc from '../../components/Toc.astro';
+import { published } from '../../lib/content';
+import { withBase, entryPath } from '../../lib/paths';
+import { topics } from '../../site';
+export async function getStaticPaths() { return (await published('episodes')).map(entry => ({ params: { slug: entry.data.slug }, props: { entry } })); }
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content, headings } = await render(entry);
+const notes = (await published('notes')).filter(note => data.noteRefs.includes(note.data.slug));
+const minutes = Math.floor((data.durationSeconds ?? 0) / 60);
+const seconds = (data.durationSeconds ?? 0) % 60;
+---
+<Layout title={data.title} description={data.summary}>
+  <div class="wrap"><article data-pagefind-body><header class="article-head"><nav class="breadcrumb" aria-label="面包屑" data-pagefind-ignore><a href={withBase('episodes/')}>播客</a></nav><span class="eyebrow" data-pagefind-filter="类型">播客节目</span> · <span class="topic-label" data-pagefind-filter="主题">{topics[data.topic]}</span><h1 data-pagefind-meta="title">{data.title}</h1><p class="summary" data-pagefind-meta="description">{data.summary}</p><div class="article-meta"><span>{data.publishedAt}</span><span>{minutes} 分 {seconds} 秒</span></div><audio controls preload="none" src={data.audioUrl!} aria-label={`${data.title}音频播放器`}></audio><p><a href={data.hostEpisodeUrl!}>在音频托管平台打开本期节目 ↗</a></p></header><div class="article-grid"><div class="article-body"><div class="prose"><Content /></div><section class="references"><h2>关联笔记与来源</h2><ul>{notes.map(note => <li><a href={entryPath('notes', note.data.slug)}>{note.data.title}</a></li>)}</ul></section></div><Toc headings={headings} /></div></article></div>
+</Layout>

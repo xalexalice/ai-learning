@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/paths';
+---
+<Layout title="页面未找到" noindex><div class="wrap"><header class="page-head"><p class="eyebrow">404</p><h1>这页笔记没有找到</h1><p>地址可能已改变，或内容尚未公开。</p><div class="actions"><a class="button" href={withBase('search/')}>搜索知识库</a><a class="text-link" href={withBase()}>回到首页</a></div></header></div></Layout>

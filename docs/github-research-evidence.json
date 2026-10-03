@@ -1,0 +1,112 @@
+{
+  "checkedAtUTC": "2026-10-02",
+  "updateDefinition": "Default branch HEAD commit committer.date in UTC; includes docs, bots and formatting. Not repository updated_at.",
+  "repositories": [
+    {
+      "repo": "satnaing/astro-paper",
+      "stars": 5094,
+      "createdAt": "2022-09-08T12:46:37Z",
+      "archived": false,
+      "branch": "main",
+      "sha": "35cfa7fbe0b897306d27670d3819e55d5205f3dd",
+      "lastCommitUTC": "2026-08-05T10:31:18Z",
+      "commitUrl": "https://github.com/satnaing/astro-paper/commit/35cfa7fbe0b897306d27670d3819e55d5205f3dd",
+      "license": "MIT",
+      "release": {
+        "tag": "v6.1.0",
+        "publishedAt": "2026-06-06T09:04:14Z",
+        "url": "https://github.com/satnaing/astro-paper/releases/tag/v6.1.0"
+      }
+    },
+    {
+      "repo": "jackyzha0/quartz",
+      "stars": 13319,
+      "createdAt": "2021-07-18T15:52:52Z",
+      "archived": false,
+      "branch": "v5",
+      "sha": "97a2d05f80c4c50534959b1d0d41cc4b3895625e",
+      "lastCommitUTC": "2026-09-20T20:14:52Z",
+      "commitUrl": "https://github.com/jackyzha0/quartz/commit/97a2d05f80c4c50534959b1d0d41cc4b3895625e",
+      "commitMessage": "chore(deps): bump the quartz-ecosystem group with 2 updates (#2561)",
+      "license": "MIT",
+      "release": {
+        "tag": "v4.0.8",
+        "publishedAt": "2023-08-21T00:09:41Z",
+        "url": "https://github.com/jackyzha0/quartz/releases/tag/v4.0.8",
+        "prereleaseFlag": false
+      }
+    },
+    {
+      "repo": "withastro/starlight",
+      "stars": 9348,
+      "createdAt": "2023-03-16T15:55:33Z",
+      "archived": false,
+      "branch": "main",
+      "sha": "e45162cea478e988f7c212b427736ebdf3427077",
+      "lastCommitUTC": "2026-10-02T08:11:43Z",
+      "commitUrl": "https://github.com/withastro/starlight/commit/e45162cea478e988f7c212b427736ebdf3427077",
+      "commitMessage": "[ci] format",
+      "license": "MIT",
+      "release": {
+        "tag": "@astrojs/starlight@0.42.5",
+        "publishedAt": "2026-10-01T08:58:14Z",
+        "url": "https://github.com/withastro/starlight/releases/tag/%40astrojs/starlight%400.42.5",
+        "prereleaseFlag": false
+      }
+    },
+    {
+      "repo": "microsoft/generative-ai-for-beginners",
+      "stars": 120939,
+      "createdAt": "2023-06-19T16:28:59Z",
+      "archived": false,
+      "branch": "main",
+      "sha": "d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8",
+      "lastCommitUTC": "2026-09-18T13:43:04Z",
+      "commitUrl": "https://github.com/microsoft/generative-ai-for-beginners/commit/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8",
+      "commitMessage": "Merge pull request #1363 from microsoft/dependabot/github_actions/github/codeql-action/init-4.38.0",
+      "license": "MIT",
+      "release": null
+    },
+    {
+      "repo": "podlove/podlove-publisher",
+      "stars": 309,
+      "createdAt": "2013-02-19T21:21:57Z",
+      "archived": false,
+      "branch": "master",
+      "sha": "1f7520794e029a4d8b0405d077921cdc7a36aba2",
+      "lastCommitUTC": "2026-09-30T11:43:52Z",
+      "commitUrl": "https://github.com/podlove/podlove-publisher/commit/1f7520794e029a4d8b0405d077921cdc7a36aba2",
+      "commitMessage": "fix: incorrect is_home call",
+      "license": "MIT",
+      "release": {
+        "tag": "4.3.0-beta16",
+        "publishedAt": "2025-09-24T23:54:08Z",
+        "url": "https://github.com/podlove/podlove-publisher/releases/tag/4.3.0-beta16",
+        "prereleaseFlag": false
+      }
+    }
+  ],
+  "quartzPluginSnapshots": [
+    {
+      "repo": "quartz-community/backlinks",
+      "sha": "c90118ea728c9bef84b64df92857789bdb4bbc13",
+      "commitUrl": "https://github.com/quartz-community/backlinks/commit/c90118ea728c9bef84b64df92857789bdb4bbc13"
+    },
+    {
+      "repo": "quartz-community/crawl-links",
+      "sha": "9a899bd8cce7cfc1ebfc68e4bd7ab6b4c6fcfd6f",
+      "commitUrl": "https://github.com/quartz-community/crawl-links/commit/9a899bd8cce7cfc1ebfc68e4bd7ab6b4c6fcfd6f"
+    },
+    {
+      "repo": "quartz-community/content-index",
+      "sha": "8c479bd40692c3e1251723f65eebb7f9fc80795f",
+      "commitUrl": "https://github.com/quartz-community/content-index/commit/8c479bd40692c3e1251723f65eebb7f9fc80795f"
+    }
+  ],
+  "podloveStableVersionEvidence": {
+    "version": "4.5.7",
+    "githubReadme": "https://github.com/podlove/podlove-publisher/blob/1f7520794e029a4d8b0405d077921cdc7a36aba2/readme.txt",
+    "wordpress": "https://wordpress.org/plugins/podlove-podcasting-plugin-for-wordpress/"
+  },
+  "reviewScope": "Read-only README, license, package metadata and selected code review. No sample execution or API calls to AI providers."
+}

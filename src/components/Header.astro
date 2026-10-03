@@ -1,0 +1,36 @@
+---
+import { site } from '../site';
+import { withBase, stripBase } from '../lib/paths';
+import { published } from '../lib/content';
+const episodes = await published('episodes');
+const links = [['tracks', '学习路径'], ['notes', '知识笔记'], ['resources', '资料库'], ['topics', '主题'], ...(episodes.length ? [['episodes', '播客']] : [])];
+const active = stripBase(Astro.url.pathname).split('/')[1];
+---
+<header class="site-header" data-pagefind-ignore>
+  <div class="wrap header-inner">
+    <a class="brand" href={withBase()} aria-label={`${site.title}，首页`}>
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5c3-1 5-1 8 1 3-2 5-2 8-1v13c-3-1-5-1-8 1-3-2-5-2-8-1zM12 6.5v13" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg></span>
+      <span>{site.title}<small>LEARN · BUILD · REFLECT</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">菜单</button>
+    <nav id="main-nav" class="main-nav" aria-label="主导航">
+      {links.map(([path, label]) => <a href={withBase(`${path}/`)} aria-current={active === path ? 'page' : undefined}>{label}</a>)}
+      <a class="search-link" href={withBase('search/')} aria-label="搜索全站"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.7" /><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.7" /></svg><span>搜索</span></a>
+    </nav>
+  </div>
+</header>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('#main-nav');
+  button?.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    button.textContent = open ? '收起菜单' : '菜单';
+    nav?.classList.toggle('is-open', open);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && button?.getAttribute('aria-expanded') === 'true') {
+      button.click(); button.focus();
+    }
+  });
+</script>

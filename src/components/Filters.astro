@@ -1,0 +1,50 @@
+---
+import { topics, kinds, resourceTypes } from '../site';
+interface Props { mode: 'notes' | 'resources' }
+const { mode } = Astro.props;
+const types = mode === 'resources' ? resourceTypes : kinds;
+---
+<form class="filters" role="search" aria-label="筛选内容" data-pagefind-ignore>
+  <div><label for="keyword">标题或标签</label><input id="keyword" type="search" placeholder="如：RAG、引用、token" name="q" /></div>
+  <div><label for="topic-filter">主题</label><select id="topic-filter" name="topic"><option value="">全部主题</option>{Object.entries(topics).map(([value, label]) => <option value={value}>{label}</option>)}</select></div>
+  <div><label for="type-filter">{mode === 'resources' ? '资料类型' : '笔记类型'}</label><select id="type-filter" name="type"><option value="">全部类型</option>{Object.entries(types).map(([value, label]) => <option value={value}>{label}</option>)}</select></div>
+  <button type="reset" class="reset-button">清除筛选</button>
+</form>
+<p class="result-count muted" role="status" aria-live="polite" data-filter-count></p>
+<p class="empty-state" hidden data-filter-empty>没有匹配的内容。试试其他关键词，或清除筛选条件。</p>
+<noscript><p class="callout">筛选需要启用 JavaScript。下方仍显示全部内容，也可以使用主题页面浏览。</p></noscript>
+<script>
+  const form = document.querySelector<HTMLFormElement>('.filters');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-content-card]')];
+  const count = document.querySelector<HTMLElement>('[data-filter-count]');
+  const empty = document.querySelector<HTMLElement>('[data-filter-empty]');
+  if (form) {
+    const params = new URLSearchParams(location.search);
+    for (const key of ['q', 'topic', 'type']) {
+      const control = form.elements.namedItem(key) as HTMLInputElement | HTMLSelectElement;
+      control.value = params.get(key) ?? '';
+    }
+    function filter() {
+      const values = new FormData(form!);
+      const keyword = String(values.get('q') ?? '').trim().toLocaleLowerCase();
+      const topic = values.get('topic');
+      const type = values.get('type');
+      let visible = 0;
+      for (const card of cards) {
+        const match = (!keyword || card.dataset.title?.toLocaleLowerCase().includes(keyword)) && (!topic || card.dataset.topic === topic) && (!type || card.dataset.type === type);
+        card.hidden = !match;
+        if (match) visible++;
+      }
+      if (count) count.textContent = `显示 ${visible} / ${cards.length} 篇内容`;
+      if (empty) empty.hidden = visible !== 0;
+      const query = new URLSearchParams();
+      for (const key of ['q', 'topic', 'type']) { const value = String(values.get(key) ?? '').trim(); if (value) query.set(key, value); }
+      history.replaceState(null, '', location.pathname + (query.size ? `?${query}` : ''));
+    }
+    form.addEventListener('input', filter);
+    form.addEventListener('change', filter);
+    form.addEventListener('submit', event => { event.preventDefault(); filter(); });
+    form.addEventListener('reset', () => setTimeout(filter, 0));
+    filter();
+  }
+</script>

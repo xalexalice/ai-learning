@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { entryPath, withBase } from '../lib/paths';
+import { topics, kinds, resourceTypes } from '../site';
+type Item = CollectionEntry<'notes' | 'resources' | 'tracks' | 'episodes'>;
+interface Props { entry: Item; number?: number }
+const { entry, number } = Astro.props;
+const { data, collection } = entry;
+const label = 'kind' in data ? kinds[data.kind] : 'type' in data ? resourceTypes[data.type] : 'steps' in data ? `${data.steps.length} 个步骤` : '播客节目';
+---
+<article class:list={['content-card', { 'lab-card': 'kind' in data && data.kind === 'lab' }]} data-content-card data-topic={data.topic} data-type={'type' in data ? data.type : 'kind' in data ? data.kind : ''} data-title={`${data.title} ${data.summary} ${data.tags.join(' ')}`}>
+  <div class="card-meta"><span class="eyebrow">{number !== undefined && `${String(number).padStart(2, '0')} / `}{label}</span><a class="topic-label" href={withBase(`topics/${data.topic}/`)}>{topics[data.topic]}</a></div>
+  <h3><a href={entryPath(collection, data.slug)}>{data.title}<span class="card-arrow" aria-hidden="true">↗</span></a></h3>
+  <p>{data.summary}</p>
+  <div class="card-bottom"><time datetime={data.updatedAt}>{data.updatedAt}</time>{'lastReviewedAt' in data && <span>已核验</span>}{'type' in data && <span>{data.author}</span>}</div>
+</article>
