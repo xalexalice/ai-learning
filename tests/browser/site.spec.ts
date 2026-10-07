@@ -9,26 +9,33 @@ test('home and the full learning path navigate under the project base', async ({
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link', { name: '播客' })).toHaveCount(0);
   await page.screenshot({ path: 'test-results/home-desktop.png', fullPage: true });
   await page.getByRole('link', { name: '从学习路径开始' }).click();
-  await expect(page).toHaveURL(/\/tracks\/ai-app-foundations\/$/);
+  await expect(page).toHaveURL(/\/tracks\/ai-systematic-learning\/$/);
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(16);
+  await page.getByRole('link', { name: '建立 AI 全景与学习顺序', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('AI 知识地图');
+  await expect(page.locator('.prose table').first().locator('tbody tr')).toHaveCount(8);
+  await page.getByRole('link', { name: /下一步/ }).click();
+  await expect(page).toHaveURL(/\/notes\/ai-mathematics\/$/);
+  await page.goto('tracks/ai-app-foundations/');
   await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(4);
   await page.getByRole('link', { name: '分清 token 与上下文预算', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Token 与上下文');
   await expect(page.getByRole('heading', { name: '原始资料与核验依据' })).toBeVisible();
-  await page.getByRole('link', { name: /下一步/ }).click();
+  await page.getByRole('navigation', { name: 'AI 应用入门：从概念到一个小实验章节导航' }).getByRole('link', { name: /下一步/ }).click();
   await expect(page).toHaveURL(/\/notes\/rag-evidence\/$/);
   expect(errors).toEqual([]);
 });
 
 test('resource filters, empty results and reset preserve a usable list', async ({ page }) => {
   await page.goto('resources/');
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(5);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(19);
   await page.getByLabel('主题', { exact: true }).selectOption('rag');
   await page.getByLabel('资料类型').selectOption('paper');
   await expect(page.locator('[data-content-card]:visible')).toHaveCount(1);
   await page.getByLabel('标题或标签').fill('nothing-can-match-this');
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: '清除筛选' }).click();
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(5);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(19);
   await expect(page).not.toHaveURL(/\?/);
 });
 
@@ -91,13 +98,39 @@ test('375px reading, mobile navigation, keyboard focus and code overflow', async
   await page.screenshot({ path: 'test-results/note-mobile-viewport.png' });
 });
 
+test('new learning modules are searchable and their map and sources work on mobile', async ({ page }) => {
+  await page.goto('search/?q=MCP');
+  const input = page.locator('.pagefind-ui__search-input');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'MCP：协议' }).first()).toBeVisible();
+  await input.fill('LoRA');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'LLM 训练与适配' }).first()).toBeVisible();
+  await input.fill('ASR');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '语音 AI' }).first()).toBeVisible();
+  await page.setViewportSize({ width: 1440, height: 1100 });
+  await page.goto('notes/ai-knowledge-map/');
+  await page.screenshot({ path: 'test-results/knowledge-map-desktop.png' });
+  await page.setViewportSize({ width: 375, height: 812 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/knowledge-map-mobile.png' });
+  await page.locator('.prose table').first().getByRole('link', { name: 'MCP：协议、工具发现、版本与授权边界', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('MCP：协议');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/mcp-note-mobile.png' });
+  await page.getByRole('link', { name: 'MCP 官方规范：版本、工具与授权', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('MCP 官方规范');
+  await expect(page.locator('.prose')).toContainText('2026-07-28');
+  await expect(page.locator('.prose')).toContainText('许可迁移中');
+});
+
 test('RSS, missing articles and empty podcast route are honest', async ({ page, request }) => {
   const rss = await request.get('rss.xml');
   expect(rss.ok()).toBe(true);
   const xml = await rss.text();
-  expect((xml.match(/<item>/g) ?? []).length).toBe(4);
+  expect((xml.match(/<item>/g) ?? []).length).toBe(28);
   expect(xml).not.toContain('first-episode-draft');
   expect(xml).toContain('/notes/token-context/');
+  expect(xml).toContain('/notes/ai-knowledge-map/');
+  expect(xml).toContain('/notes/audio-asr-tts/');
   const draft = await request.get('episodes/first-episode-draft/');
   expect(draft.status()).toBe(404);
   await page.goto('episodes/');

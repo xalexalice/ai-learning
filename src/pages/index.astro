@@ -5,7 +5,7 @@ import { published } from '../lib/content';
 import { withBase, entryPath } from '../lib/paths';
 import { topics } from '../site';
 const [notes, resources, tracks] = await Promise.all([published('notes'), published('resources'), published('tracks')]);
-const track = tracks[0];
+const track = tracks.find(entry => entry.data.slug === 'ai-systematic-learning') ?? tracks[0];
 ---
 <Layout>
   <div class="wrap">

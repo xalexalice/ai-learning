@@ -1,0 +1,851 @@
+{
+  "accessedAt": "2026-10-07",
+  "method": "GitHub repository searches + official-maintainer repository metadata, default-branch commit, recursive tree, README, root licenses and selected chapter reads. Commit date and push date are different fields; freshness is not a quality score.",
+  "queries": [
+    "AI learning notes",
+    "LLM RAG 学习",
+    "hello-agents org:datawhalechina",
+    "course org:huggingface",
+    "site:github.com microsoft generative-ai-for-beginners ai-agents-for-beginners",
+    "site:github.com d2l-ai d2l-zh",
+    "ragas GitHub official evaluation",
+    "site:github.com modelcontextprotocol modelcontextprotocol specification 2026"
+  ],
+  "excluded": [
+    {
+      "repo": "modelcontextprotocol/docs",
+      "reason": "Archived; use modelcontextprotocol/modelcontextprotocol."
+    },
+    {
+      "repo": "explodinggradients/ragas",
+      "reason": "Old repository address; current official docs found at vibrantlabsai/ragas."
+    }
+  ],
+  "reusePolicy": "Original Chinese synthesis and source links only; no course text, figures, solutions, datasets or upstream code copied. Model weights, datasets and nested projects require separate license checks.",
+  "repositories": [
+    {
+      "repo": "d2l-ai/d2l-zh",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["ai-mathematics","machine-learning-workflow","deep-learning-training","transformer-attention","vision-foundations","ai-knowledge-map"],
+      "url": "https://github.com/d2l-ai/d2l-zh",
+      "branch": "master",
+      "license": "Apache-2.0（根 LICENSE；外链书籍、数据与图片另核对）",
+      "archived": false,
+      "pushedAt": "2024-07-30T09:32:19Z",
+      "language": "Python",
+      "sha": "e6b18ccea71451a55fcd861d7b96fddf2587b09a",
+      "committedAt": "2023-08-18T04:59:12Z",
+      "slug": "d2l-zh-course",
+      "title": "动手学深度学习：数学、神经网络与视觉",
+      "topic": "foundations",
+      "type": "course",
+      "scope": "线性代数、微积分、概率、自动微分、泛化、Transformer、计算机视觉",
+      "reading": "先读数学预备知识与线性网络，再读多层感知机；注意力和视觉按支线学习。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "chapter_preliminaries/linear-algebra.md",
+        "chapter_preliminaries/autograd.md",
+        "chapter_linear-networks/linear-regression.md",
+        "chapter_multilayer-perceptrons/underfit-overfit.md",
+        "chapter_multilayer-perceptrons/backprop.md",
+        "chapter_attention-mechanisms/transformer.md",
+        "chapter_computer-vision/object-detection-dataset.md",
+        "chapter_convolutional-neural-networks/channels.md",
+        "chapter_preliminaries/calculus.md",
+        "chapter_preliminaries/probability.md",
+        "chapter_computer-vision/semantic-segmentation-and-dataset.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "chapter_preliminaries/linear-algebra.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/linear-algebra.md",
+          "characters": 21404
+        },
+        {
+          "path": "chapter_preliminaries/autograd.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/autograd.md",
+          "characters": 7422
+        },
+        {
+          "path": "chapter_linear-networks/linear-regression.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_linear-networks/linear-regression.md",
+          "characters": 13857
+        },
+        {
+          "path": "chapter_multilayer-perceptrons/underfit-overfit.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/underfit-overfit.md",
+          "characters": 15350
+        },
+        {
+          "path": "chapter_multilayer-perceptrons/backprop.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_multilayer-perceptrons/backprop.md",
+          "characters": 5498
+        },
+        {
+          "path": "chapter_attention-mechanisms/transformer.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_attention-mechanisms/transformer.md",
+          "characters": 43588
+        },
+        {
+          "path": "chapter_computer-vision/object-detection-dataset.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/object-detection-dataset.md",
+          "characters": 8313
+        },
+        {
+          "path": "chapter_convolutional-neural-networks/channels.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_convolutional-neural-networks/channels.md",
+          "characters": 5344
+        },
+        {
+          "path": "chapter_preliminaries/calculus.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/calculus.md",
+          "characters": 8753
+        },
+        {
+          "path": "chapter_preliminaries/probability.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_preliminaries/probability.md",
+          "characters": 13568
+        },
+        {
+          "path": "chapter_computer-vision/semantic-segmentation-and-dataset.md",
+          "url": "https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/chapter_computer-vision/semantic-segmentation-and-dataset.md",
+          "characters": 17621
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/ML-For-Beginners",
+      "githubDetectedLicense": "MIT",
+      "notes": ["machine-learning-workflow","ai-knowledge-map"],
+      "url": "https://github.com/microsoft/ML-For-Beginners",
+      "branch": "main",
+      "license": "MIT；sketchnotes 为 CC-BY-SA-4.0",
+      "archived": false,
+      "pushedAt": "2026-09-15T05:29:39Z",
+      "language": "Jupyter Notebook",
+      "sha": "de2d4e12236445198213a0711855e348e7253cd4",
+      "committedAt": "2026-09-14T19:45:03Z",
+      "slug": "ml-beginners-course",
+      "title": "Microsoft 机器学习入门课程",
+      "topic": "foundations",
+      "type": "course",
+      "scope": "回归、分类、数据清洗、模型评估与应用",
+      "reading": "从回归和分类章节建立传统机器学习基线；示例数据集、插图许可分别核对。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "2-Regression/1-Tools/README.md",
+        "4-Classification/1-Introduction/README.md",
+        "3-Web-App/1-Web-App/README.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/microsoft/ML-For-Beginners/blob/de2d4e12236445198213a0711855e348e7253cd4/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "2-Regression/1-Tools/README.md",
+          "url": "https://github.com/microsoft/ML-For-Beginners/blob/de2d4e12236445198213a0711855e348e7253cd4/2-Regression/1-Tools/README.md",
+          "characters": 14381
+        },
+        {
+          "path": "4-Classification/1-Introduction/README.md",
+          "url": "https://github.com/microsoft/ML-For-Beginners/blob/de2d4e12236445198213a0711855e348e7253cd4/4-Classification/1-Introduction/README.md",
+          "characters": 13536
+        },
+        {
+          "path": "3-Web-App/1-Web-App/README.md",
+          "url": "https://github.com/microsoft/ML-For-Beginners/blob/de2d4e12236445198213a0711855e348e7253cd4/3-Web-App/1-Web-App/README.md",
+          "characters": 14706
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/generative-ai-for-beginners",
+      "githubDetectedLicense": "MIT",
+      "notes": ["model-selection","prompt-design","structured-output-tools","embeddings-vector-search","rag-ingestion-chunking","rag-retrieval-reranking","ai-security-boundaries","ai-knowledge-map"],
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "branch": "main",
+      "license": "MIT",
+      "archived": false,
+      "pushedAt": "2026-10-07T01:42:48Z",
+      "language": "Jupyter Notebook",
+      "sha": "d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8",
+      "committedAt": "2026-09-18T13:43:04Z",
+      "slug": "genai-beginners-course",
+      "title": "Microsoft 生成式 AI 应用入门",
+      "topic": "prompting",
+      "type": "course",
+      "scope": "模型选型、提示、函数调用、RAG、应用安全",
+      "reading": "按模型比较→提示→函数调用→RAG→安全阅读；课程中的模型名和云服务配置不代表本站选型。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "02-exploring-and-comparing-different-llms/README.md",
+        "04-prompt-engineering-fundamentals/README.md",
+        "05-advanced-prompts/README.md",
+        "11-integrating-with-function-calling/README.md",
+        "15-rag-and-vector-databases/README.md",
+        "13-securing-ai-applications/README.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "02-exploring-and-comparing-different-llms/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/02-exploring-and-comparing-different-llms/README.md",
+          "characters": 21113
+        },
+        {
+          "path": "04-prompt-engineering-fundamentals/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/04-prompt-engineering-fundamentals/README.md",
+          "characters": 44262
+        },
+        {
+          "path": "05-advanced-prompts/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/05-advanced-prompts/README.md",
+          "characters": 22971
+        },
+        {
+          "path": "11-integrating-with-function-calling/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/11-integrating-with-function-calling/README.md",
+          "characters": 22186
+        },
+        {
+          "path": "15-rag-and-vector-databases/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/15-rag-and-vector-databases/README.md",
+          "characters": 14447
+        },
+        {
+          "path": "13-securing-ai-applications/README.md",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/d8ec07e31c4b32bd283d565c1abd9b58bb5cf2e8/13-securing-ai-applications/README.md",
+          "characters": 18847
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/ai-agents-for-beginners",
+      "githubDetectedLicense": "MIT",
+      "notes": ["structured-output-tools","agent-control-loop","agent-context-memory","agent-workflows-orchestration","llm-evaluation","ai-security-boundaries","ai-knowledge-map"],
+      "url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "branch": "main",
+      "license": "MIT",
+      "archived": false,
+      "pushedAt": "2026-09-19T06:16:49Z",
+      "language": "Jupyter Notebook",
+      "sha": "25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595",
+      "committedAt": "2026-09-09T23:35:03Z",
+      "slug": "agents-beginners-course",
+      "title": "Microsoft AI Agents 入门课程",
+      "topic": "agents",
+      "type": "course",
+      "scope": "工具使用、规划、多智能体、记忆、可信执行",
+      "reading": "先读 STUDY_GUIDE 和工具使用，再读规划、记忆与可信智能体；不要直接搬用旧 SDK 调用。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "STUDY_GUIDE.md",
+        "03-agentic-design-patterns/README.md",
+        "04-tool-use/README.md",
+        "06-building-trustworthy-agents/README.md",
+        "07-planning-design/README.md",
+        "08-multi-agent/README.md",
+        "13-agent-memory/README.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "STUDY_GUIDE.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/STUDY_GUIDE.md",
+          "characters": 12716
+        },
+        {
+          "path": "03-agentic-design-patterns/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/03-agentic-design-patterns/README.md",
+          "characters": 7387
+        },
+        {
+          "path": "04-tool-use/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/04-tool-use/README.md",
+          "characters": 19425
+        },
+        {
+          "path": "06-building-trustworthy-agents/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/06-building-trustworthy-agents/README.md",
+          "characters": 12883
+        },
+        {
+          "path": "07-planning-design/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/07-planning-design/README.md",
+          "characters": 12510
+        },
+        {
+          "path": "08-multi-agent/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/08-multi-agent/README.md",
+          "characters": 16906
+        },
+        {
+          "path": "13-agent-memory/README.md",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/25b7985f3b2dc37a84f4a7387ccd3c9f0e5b1595/13-agent-memory/README.md",
+          "characters": 12320
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/course",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["reinforcement-learning","transformer-attention","llm-training-adaptation","embeddings-vector-search","rag-retrieval-reranking","ai-knowledge-map"],
+      "url": "https://github.com/huggingface/course",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-10-06T09:20:14Z",
+      "language": "MDX",
+      "sha": "8b893f0ede6c781045692a7f892f25a0c92b4805",
+      "committedAt": "2026-10-06T09:20:11Z",
+      "slug": "hf-llm-course",
+      "title": "Hugging Face LLM 课程",
+      "topic": "llm",
+      "type": "course",
+      "scope": "Transformer、tokenizer、数据、语义检索、聊天模板、LLM 训练",
+      "reading": "重点阅读 Transformer 原理、FAISS 语义检索、聊天模板；中文翻译和英文原章可交叉核对。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "chapters/en/chapter1/4.mdx",
+        "chapters/en/chapter6/7.mdx",
+        "chapters/en/chapter11/1.mdx",
+        "chapters/en/chapter12/1.mdx",
+        "chapters/en/chapter5/6.mdx",
+        "chapters/en/chapter11/2.mdx",
+        "chapters/en/chapter12/2.mdx"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "chapters/en/chapter1/4.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter1/4.mdx",
+          "characters": 19024
+        },
+        {
+          "path": "chapters/en/chapter6/7.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter6/7.mdx",
+          "characters": 18419
+        },
+        {
+          "path": "chapters/en/chapter11/1.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter11/1.mdx",
+          "characters": 2783
+        },
+        {
+          "path": "chapters/en/chapter12/1.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter12/1.mdx",
+          "characters": 4420
+        },
+        {
+          "path": "chapters/en/chapter5/6.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter5/6.mdx",
+          "characters": 21676
+        },
+        {
+          "path": "chapters/en/chapter11/2.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter11/2.mdx",
+          "characters": 9757
+        },
+        {
+          "path": "chapters/en/chapter12/2.mdx",
+          "url": "https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter12/2.mdx",
+          "characters": 15216
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/smol-course",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["model-selection","llm-training-adaptation","vision-foundations","ai-knowledge-map"],
+      "url": "https://github.com/huggingface/smol-course",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-10-06T20:44:16Z",
+      "language": "Jupyter Notebook",
+      "sha": "b712705327d1204353a1209e991334d441b4de7e",
+      "committedAt": "2026-10-06T09:38:49Z",
+      "slug": "hf-smol-course",
+      "title": "Hugging Face 小模型微调与对齐课程",
+      "topic": "llm",
+      "type": "course",
+      "scope": "SFT、LoRA/PEFT、DPO、视觉语言模型",
+      "reading": "阅读已存在的 unit1/2/3 文件；README 的未来计划不视为已发布内容。实际训练需另核对硬件与模型卡。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "units/en/unit1/2.md",
+        "units/en/unit1/3.md",
+        "units/en/unit1/3a.md",
+        "units/en/unit2/1.md",
+        "units/en/unit3/1.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "units/en/unit1/2.md",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/units/en/unit1/2.md",
+          "characters": 29635
+        },
+        {
+          "path": "units/en/unit1/3.md",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/units/en/unit1/3.md",
+          "characters": 26397
+        },
+        {
+          "path": "units/en/unit1/3a.md",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/units/en/unit1/3a.md",
+          "characters": 7258
+        },
+        {
+          "path": "units/en/unit2/1.md",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/units/en/unit2/1.md",
+          "characters": 3833
+        },
+        {
+          "path": "units/en/unit3/1.md",
+          "url": "https://github.com/huggingface/smol-course/blob/b712705327d1204353a1209e991334d441b4de7e/units/en/unit3/1.md",
+          "characters": 7435
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/diffusers",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["diffusion-generation","ai-knowledge-map"],
+      "url": "https://github.com/huggingface/diffusers",
+      "branch": "main",
+      "license": "Apache-2.0（库代码；模型权重另有许可）",
+      "archived": false,
+      "pushedAt": "2026-10-07T04:08:39Z",
+      "language": "Python",
+      "sha": "c6df88a511a98740646ee55577b590c9852650ce",
+      "committedAt": "2026-10-06T19:04:08Z",
+      "slug": "hf-diffusers-docs",
+      "title": "Diffusers 图像生成与调度器文档",
+      "topic": "multimodal",
+      "type": "doc",
+      "scope": "扩散生成、条件控制、scheduler、内存优化",
+      "reading": "先理解 pipeline 的组件，再看条件生成与 scheduler；不能用库许可证代替模型权重许可。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "docs/source/en/using-diffusers/conditional_image_generation.md",
+        "docs/source/en/using-diffusers/schedulers.md",
+        "docs/source/en/optimization/memory.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/huggingface/diffusers/blob/c6df88a511a98740646ee55577b590c9852650ce/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/source/en/using-diffusers/conditional_image_generation.md",
+          "url": "https://github.com/huggingface/diffusers/blob/c6df88a511a98740646ee55577b590c9852650ce/docs/source/en/using-diffusers/conditional_image_generation.md",
+          "characters": 17489
+        },
+        {
+          "path": "docs/source/en/using-diffusers/schedulers.md",
+          "url": "https://github.com/huggingface/diffusers/blob/c6df88a511a98740646ee55577b590c9852650ce/docs/source/en/using-diffusers/schedulers.md",
+          "characters": 11848
+        },
+        {
+          "path": "docs/source/en/optimization/memory.md",
+          "url": "https://github.com/huggingface/diffusers/blob/c6df88a511a98740646ee55577b590c9852650ce/docs/source/en/optimization/memory.md",
+          "characters": 27776
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/audio-transformers-course",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["audio-asr-tts","ai-knowledge-map"],
+      "url": "https://github.com/huggingface/audio-transformers-course",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-10-06T09:31:10Z",
+      "language": "MDX",
+      "sha": "56b6e8334aef7e0efa0137574f068c968f3f6e1c",
+      "committedAt": "2026-10-06T09:31:09Z",
+      "slug": "hf-audio-course",
+      "title": "Hugging Face 音频学习课程",
+      "topic": "multimodal",
+      "type": "course",
+      "scope": "采样率、频谱、CTC、ASR、TTS 与音频评估",
+      "reading": "从音频数据开始，再对照 ASR/TTS 的输入输出与评估章节。示例音频与数据集许可单独检查。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "chapters/en/chapter1/audio_data.mdx",
+        "chapters/en/chapter3/ctc.mdx",
+        "chapters/en/chapter5/evaluation.mdx",
+        "chapters/en/chapter6/evaluation.mdx"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/huggingface/audio-transformers-course/blob/56b6e8334aef7e0efa0137574f068c968f3f6e1c/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "chapters/en/chapter1/audio_data.mdx",
+          "url": "https://github.com/huggingface/audio-transformers-course/blob/56b6e8334aef7e0efa0137574f068c968f3f6e1c/chapters/en/chapter1/audio_data.mdx",
+          "characters": 18631
+        },
+        {
+          "path": "chapters/en/chapter3/ctc.mdx",
+          "url": "https://github.com/huggingface/audio-transformers-course/blob/56b6e8334aef7e0efa0137574f068c968f3f6e1c/chapters/en/chapter3/ctc.mdx",
+          "characters": 10190
+        },
+        {
+          "path": "chapters/en/chapter5/evaluation.mdx",
+          "url": "https://github.com/huggingface/audio-transformers-course/blob/56b6e8334aef7e0efa0137574f068c968f3f6e1c/chapters/en/chapter5/evaluation.mdx",
+          "characters": 19585
+        },
+        {
+          "path": "chapters/en/chapter6/evaluation.mdx",
+          "url": "https://github.com/huggingface/audio-transformers-course/blob/56b6e8334aef7e0efa0137574f068c968f3f6e1c/chapters/en/chapter6/evaluation.mdx",
+          "characters": 2380
+        }
+      ]
+    },
+    {
+      "repo": "huggingface/deep-rl-class",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["reinforcement-learning","ai-knowledge-map"],
+      "url": "https://github.com/huggingface/deep-rl-class",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-10-06T09:34:00Z",
+      "language": "MDX",
+      "sha": "dbc53d83582884d06fb2a4b9e388405afdd34b18",
+      "committedAt": "2026-10-06T09:31:49Z",
+      "slug": "hf-rl-course",
+      "title": "Hugging Face 深度强化学习课程",
+      "topic": "foundations",
+      "type": "course",
+      "scope": "状态、动作、奖励、Q-learning、策略梯度与 PPO",
+      "reading": "重点用于理论学习。README 明确处于低维护状态，部分实践功能不可用；本次未复现其训练代码。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE.md",
+        "units/en/unit1/rl-framework.mdx",
+        "units/en/unit2/q-learning.mdx",
+        "units/en/unit8/intuition-behind-ppo.mdx"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/huggingface/deep-rl-class/blob/dbc53d83582884d06fb2a4b9e388405afdd34b18/LICENSE.md"
+        }
+      ],
+      "files": [
+        {
+          "path": "units/en/unit1/rl-framework.mdx",
+          "url": "https://github.com/huggingface/deep-rl-class/blob/dbc53d83582884d06fb2a4b9e388405afdd34b18/units/en/unit1/rl-framework.mdx",
+          "characters": 8363
+        },
+        {
+          "path": "units/en/unit2/q-learning.mdx",
+          "url": "https://github.com/huggingface/deep-rl-class/blob/dbc53d83582884d06fb2a4b9e388405afdd34b18/units/en/unit2/q-learning.mdx",
+          "characters": 9336
+        },
+        {
+          "path": "units/en/unit8/intuition-behind-ppo.mdx",
+          "url": "https://github.com/huggingface/deep-rl-class/blob/dbc53d83582884d06fb2a4b9e388405afdd34b18/units/en/unit8/intuition-behind-ppo.mdx",
+          "characters": 1553
+        }
+      ]
+    },
+    {
+      "repo": "datawhalechina/llm-universe",
+      "githubDetectedLicense": null,
+      "notes": ["embeddings-vector-search","rag-ingestion-chunking","rag-retrieval-reranking","llm-evaluation","ai-knowledge-map"],
+      "url": "https://github.com/datawhalechina/llm-universe",
+      "branch": "main",
+      "archived": false,
+      "pushedAt": "2026-08-27T03:08:26Z",
+      "language": "Jupyter Notebook",
+      "sha": "77beb748047e8a0d8ff708716606a8e0b132dc45",
+      "committedAt": "2026-08-27T03:08:26Z",
+      "slug": "datawhale-llm-universe",
+      "title": "Datawhale LLM Universe：中文 RAG 入门",
+      "topic": "rag",
+      "type": "course",
+      "license": "未发现根 LICENSE，GitHub API 未识别许可证",
+      "scope": "文档读取、清洗、切片、向量库、问答与评估",
+      "reading": "以 C3 搭建知识库和 C5 评估为中文补充；只链接与独立整理，未复制代码、图表或课程段落。",
+      "inspectedPaths": [
+        "README.md",
+        "docs/C3/C3.md",
+        "docs/C5/C5.md"
+      ],
+      "licensePaths": [],
+      "files": [
+        {
+          "path": "docs/C3/C3.md",
+          "url": "https://github.com/datawhalechina/llm-universe/blob/77beb748047e8a0d8ff708716606a8e0b132dc45/docs/C3/C3.md",
+          "characters": 39595
+        },
+        {
+          "path": "docs/C5/C5.md",
+          "url": "https://github.com/datawhalechina/llm-universe/blob/77beb748047e8a0d8ff708716606a8e0b132dc45/docs/C5/C5.md",
+          "characters": 39399
+        }
+      ]
+    },
+    {
+      "repo": "datawhalechina/hello-agents",
+      "githubDetectedLicense": "NOASSERTION",
+      "notes": ["agent-context-memory","ai-knowledge-map"],
+      "url": "https://github.com/datawhalechina/hello-agents",
+      "branch": "main",
+      "license": "CC-BY-NC-SA-4.0（根 LICENSE.txt；子项目可能另有许可）",
+      "archived": false,
+      "pushedAt": "2026-09-29T11:53:44Z",
+      "language": "Python",
+      "sha": "4b014ad47e2658af24b59f21e7bdb3f89a66205e",
+      "committedAt": "2026-09-29T11:53:44Z",
+      "slug": "datawhale-hello-agents",
+      "title": "Datawhale Hello Agents：记忆与上下文",
+      "topic": "agents",
+      "type": "course",
+      "scope": "智能体范式、记忆、上下文工程与工具评估",
+      "reading": "对照第八、九、十二章理解概念；本项目不复制其代码、图片或文本，商用复用须检查具体许可。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE.txt",
+        "docs/chapter8/第八章 记忆与检索.md",
+        "docs/chapter9/第九章 上下文工程.md",
+        "docs/chapter12/第十二章 智能体性能评估.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE.txt",
+          "url": "https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/LICENSE.txt"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/chapter8/第八章 记忆与检索.md",
+          "url": "https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/docs/chapter8/第八章 记忆与检索.md",
+          "characters": 64487
+        },
+        {
+          "path": "docs/chapter9/第九章 上下文工程.md",
+          "url": "https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/docs/chapter9/第九章 上下文工程.md",
+          "characters": 74268
+        },
+        {
+          "path": "docs/chapter12/第十二章 智能体性能评估.md",
+          "url": "https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/docs/chapter12/第十二章 智能体性能评估.md",
+          "characters": 77977
+        }
+      ]
+    },
+    {
+      "repo": "vllm-project/vllm",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["serving-performance","ai-knowledge-map"],
+      "url": "https://github.com/vllm-project/vllm",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-10-07T04:16:54Z",
+      "language": "Python",
+      "sha": "aecb717f10bccbaae441d43910ae660a8f2e4e3c",
+      "committedAt": "2026-10-07T04:16:53Z",
+      "slug": "vllm-serving-docs",
+      "title": "vLLM 推理服务：缓存、吞吐与指标",
+      "topic": "engineering",
+      "type": "doc",
+      "scope": "KV cache、prefix caching、推理指标与基准",
+      "reading": "先读 metrics 与 prefix caching；Paged Attention 页面自称历史设计说明，不能视为所有后端的当前实现。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "docs/design/paged_attention.md",
+        "docs/design/prefix_caching.md",
+        "docs/design/metrics.md",
+        "docs/benchmarking/README.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/vllm-project/vllm/blob/aecb717f10bccbaae441d43910ae660a8f2e4e3c/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/design/paged_attention.md",
+          "url": "https://github.com/vllm-project/vllm/blob/aecb717f10bccbaae441d43910ae660a8f2e4e3c/docs/design/paged_attention.md",
+          "characters": 20733
+        },
+        {
+          "path": "docs/design/prefix_caching.md",
+          "url": "https://github.com/vllm-project/vllm/blob/aecb717f10bccbaae441d43910ae660a8f2e4e3c/docs/design/prefix_caching.md",
+          "characters": 13882
+        },
+        {
+          "path": "docs/design/metrics.md",
+          "url": "https://github.com/vllm-project/vllm/blob/aecb717f10bccbaae441d43910ae660a8f2e4e3c/docs/design/metrics.md",
+          "characters": 34001
+        },
+        {
+          "path": "docs/benchmarking/README.md",
+          "url": "https://github.com/vllm-project/vllm/blob/aecb717f10bccbaae441d43910ae660a8f2e4e3c/docs/benchmarking/README.md",
+          "characters": 707
+        }
+      ]
+    },
+    {
+      "repo": "modelcontextprotocol/modelcontextprotocol",
+      "githubDetectedLicense": "NOASSERTION",
+      "notes": ["mcp-tool-boundaries","ai-security-boundaries","ai-knowledge-map"],
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+      "branch": "main",
+      "license": "许可迁移中：新代码/规范 Apache-2.0，普通文档 CC-BY-4.0，部分历史贡献保留 MIT",
+      "archived": false,
+      "pushedAt": "2026-10-06T16:14:38Z",
+      "language": "TypeScript",
+      "sha": "0a11bf68c7ec4473526ec15589f592afcd12d1e8",
+      "committedAt": "2026-10-06T14:43:45Z",
+      "slug": "mcp-specification",
+      "title": "MCP 官方规范：版本、工具与授权",
+      "topic": "agents",
+      "type": "doc",
+      "scope": "2026-07-28 规范、版本协商、tools 与授权安全",
+      "reading": "本次固定阅读 2026-07-28 规范；旧 docs 仓库已归档。SDK 支持版本需另核对，不能假设旧初始化流程适用于新版。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "docs/specification/2026-07-28/index.mdx",
+        "docs/specification/2026-07-28/basic/versioning.mdx",
+        "docs/specification/2026-07-28/server/tools.mdx",
+        "docs/specification/2026-07-28/basic/authorization/security-considerations.mdx"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/0a11bf68c7ec4473526ec15589f592afcd12d1e8/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/specification/2026-07-28/index.mdx",
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/0a11bf68c7ec4473526ec15589f592afcd12d1e8/docs/specification/2026-07-28/index.mdx",
+          "characters": 5694
+        },
+        {
+          "path": "docs/specification/2026-07-28/basic/versioning.mdx",
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/0a11bf68c7ec4473526ec15589f592afcd12d1e8/docs/specification/2026-07-28/basic/versioning.mdx",
+          "characters": 11293
+        },
+        {
+          "path": "docs/specification/2026-07-28/server/tools.mdx",
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/0a11bf68c7ec4473526ec15589f592afcd12d1e8/docs/specification/2026-07-28/server/tools.mdx",
+          "characters": 23769
+        },
+        {
+          "path": "docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+          "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/0a11bf68c7ec4473526ec15589f592afcd12d1e8/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+          "characters": 9954
+        }
+      ]
+    },
+    {
+      "repo": "vibrantlabsai/ragas",
+      "githubDetectedLicense": "Apache-2.0",
+      "notes": ["llm-evaluation","rag-evaluation","ai-knowledge-map"],
+      "url": "https://github.com/vibrantlabsai/ragas",
+      "branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushedAt": "2026-02-24T07:47:19Z",
+      "language": "Python",
+      "sha": "298b68274234c060deacab3cf5fb52aa3a20e885",
+      "committedAt": "2026-02-24T07:47:18Z",
+      "slug": "ragas-evaluation-docs",
+      "title": "Ragas 官方评估指标文档",
+      "topic": "evaluation",
+      "type": "doc",
+      "scope": "faithfulness、context precision/recall、factual correctness",
+      "reading": "按评估对象与所需字段学习指标；文档包含新旧 API 示例，执行前需固定实际安装版本与评判模型。",
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "docs/concepts/metrics/available_metrics/faithfulness.md",
+        "docs/concepts/metrics/available_metrics/context_precision.md",
+        "docs/concepts/metrics/available_metrics/context_recall.md",
+        "docs/concepts/metrics/available_metrics/factual_correctness.md"
+      ],
+      "licensePaths": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/LICENSE"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/concepts/metrics/available_metrics/faithfulness.md",
+          "url": "https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/docs/concepts/metrics/available_metrics/faithfulness.md",
+          "characters": 5161
+        },
+        {
+          "path": "docs/concepts/metrics/available_metrics/context_precision.md",
+          "url": "https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/docs/concepts/metrics/available_metrics/context_precision.md",
+          "characters": 8710
+        },
+        {
+          "path": "docs/concepts/metrics/available_metrics/context_recall.md",
+          "url": "https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/docs/concepts/metrics/available_metrics/context_recall.md",
+          "characters": 5068
+        },
+        {
+          "path": "docs/concepts/metrics/available_metrics/factual_correctness.md",
+          "url": "https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/docs/concepts/metrics/available_metrics/factual_correctness.md",
+          "characters": 8914
+        }
+      ]
+    }
+  ]
+}
