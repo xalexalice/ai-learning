@@ -1,16 +1,16 @@
 # GitHub AI 学习资料与笔记索引
 
-核验日期：2026-10-07。本批筛选 14 个教材或维护者仓库，新增 24 篇原创概念笔记、14 张资料卡、4 条学习路径；保留原有 4 篇笔记与入门路径。现在共 28 篇笔记、19 张资料卡、5 条路径，覆盖全部 8 个主题。
+首轮核验日期：2026-10-07。本批筛选 14 个教材或维护者仓库，新增 24 篇原创概念笔记、14 张资料卡、4 条学习路径；保留原有 4 篇笔记与入门路径。首轮共 28 篇笔记、19 张资料卡、5 条路径。本页保留首轮来源与模块索引；第二轮另补 16 篇笔记、9 张资料卡、2 条路径，当前总量为 44 / 28 / 7，详见 [开放学习对照与补充](learning-gap-analysis.md)。
 
 ## 学习入口
 
 网站入口为知识笔记中的“AI 知识地图”，首页主路径为“AI 系统学习主线”。
 
 - [知识地图](../src/content/notes/ai-knowledge-map.md)：8 模块目录、学习方法和支线选择。
-- [系统主线](../src/content/tracks/ai-systematic-learning.md)：16 步，按前置顺序学习。
+- [系统主线](../src/content/tracks/ai-systematic-learning.md)：扩展为 21 步，按前置顺序学习。
 - [应用工程](../src/content/tracks/ai-application-engineering.md)：14 步，RAG/agent/MCP/评估/安全。
-- [训练与对齐](../src/content/tracks/ai-model-training.md)：5 步，训练/强化学习/SFT/LoRA/偏好。
-- [多模态](../src/content/tracks/ai-multimodal-learning.md)：4 步，选型/CV/VLM/生成/语音。
+- [训练与对齐](../src/content/tracks/ai-model-training.md)：扩展为 8 步，训练实践/迁移/强化学习/SFT/LoRA/偏好。
+- [多模态](../src/content/tracks/ai-multimodal-learning.md)：扩展为 5 步，选型/CV/VLM/迁移/生成/语音。
 - [原有入门](../src/content/tracks/ai-app-foundations.md)：4 步，包含可实际运行的关键词实验。
 
 ## 模块覆盖

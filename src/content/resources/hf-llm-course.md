@@ -32,6 +32,8 @@ Transformer、tokenizer、数据、语义检索、聊天模板、LLM 训练。�
 
 ## 版本与维护状态
 
+第二轮补读 NLP 任务：[token 分类/标签对齐](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter7/2.mdx)、[摘要](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter7/5.mdx)、[问答](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/chapter7/7.mdx)。继续使用同一快照，完整记录见第二轮证据文件。
+
 本次固定默认分支快照 `8b893f0ede6c781045692a7f892f25a0c92b4805`。该分支最近提交时间为 2026-10-06T09:20:11Z，仓库最近 push 时间为 2026-10-06T09:20:14Z；两者含义不同，push 不保证教材章节发生更新。运行示例前仍需核对依赖、模型和服务版本。
 
 ## 许可与本站使用方式

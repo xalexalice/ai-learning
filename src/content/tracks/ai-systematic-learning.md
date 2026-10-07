@@ -17,9 +17,24 @@ steps:
   - title: "机器学习工作流：任务、数据与泛化"
     note: machine-learning-workflow
     task: "写数据字典、划分理由、泄漏反例和多数类基线。"
+  - title: "数据与特征管线：先划分，再拟合"
+    note: data-feature-pipelines
+    task: "为数值/类别字段写处理方案，标注所有 fit 的训练来源。"
+  - title: "监督学习算法：线性、树、集成与距离"
+    note: supervised-models
+    task: "对照基线、线性和树模型，写预处理、假设与成本。"
+  - title: "机器学习评估：指标、阈值与交叉验证"
+    note: ml-metrics-validation
+    task: "手算混淆矩阵，写阈值、分组/时间划分与测试隔离理由。"
   - title: "深度学习训练：计算图、损失与优化"
     note: deep-learning-training
     task: "标注训练循环与梯度清零位置，解释两组假想曲线。"
+  - title: "优化与正则化：学习率、泛化与训练曲线"
+    note: optimization-regularization
+    task: "手算一步 SGD，为三种训练曲线写单因素检查计划。"
+  - title: "PyTorch 训练实践：数据、梯度与 checkpoint"
+    note: pytorch-training-practice
+    task: "标注训练循环的形状与梯度状态，列保存和重载清单。"
   - title: "Token 与上下文"
     note: token-context
     task: "列出输入预算，说明为什么字符数不能代替 token 数。"
@@ -60,7 +75,7 @@ steps:
 
 ## 学习目标与前置
 
-适合会阅读基础代码、希望建立完整概念框架的学习者。主线共 16 步，不要求先购买模型服务。先用手算、虚构数据与纸上流程完成每步任务；实际训练或调用留到条件具备后。
+适合会阅读基础代码、希望建立完整概念框架的学习者。主线共 21 步，不要求先购买模型服务。先用手算、虚构数据与纸上流程完成每步任务；实际训练或调用留到条件具备后。
 
 ## 学习方法
 
@@ -73,6 +88,8 @@ steps:
 ## 继续深入
 
 应用系统见 [RAG 与智能体工程](../ai-application-engineering/)；参数学习见 [模型训练与对齐](../ai-model-training/)；视觉、生成和语音见 [多模态支线](../ai-multimodal-learning/)。
+
+传统算法与统计见 [传统 ML 支线](../ml-foundations-learning/)；测试、发布和监控见 [MLOps 支线](../mlops-learning/)。全部知识清单和综合验收见 [系统大纲](../../notes/ai-curriculum/)。
 
 ## 核验范围
 

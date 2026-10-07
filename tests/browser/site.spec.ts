@@ -10,7 +10,7 @@ test('home and the full learning path navigate under the project base', async ({
   await page.screenshot({ path: 'test-results/home-desktop.png', fullPage: true });
   await page.getByRole('link', { name: '从学习路径开始' }).click();
   await expect(page).toHaveURL(/\/tracks\/ai-systematic-learning\/$/);
-  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(16);
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(21);
   await page.getByRole('link', { name: '建立 AI 全景与学习顺序', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('AI 知识地图');
   await expect(page.locator('.prose table').first().locator('tbody tr')).toHaveCount(8);
@@ -28,14 +28,14 @@ test('home and the full learning path navigate under the project base', async ({
 
 test('resource filters, empty results and reset preserve a usable list', async ({ page }) => {
   await page.goto('resources/');
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(19);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(28);
   await page.getByLabel('主题', { exact: true }).selectOption('rag');
   await page.getByLabel('资料类型').selectOption('paper');
   await expect(page.locator('[data-content-card]:visible')).toHaveCount(1);
   await page.getByLabel('标题或标签').fill('nothing-can-match-this');
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: '清除筛选' }).click();
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(19);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(28);
   await expect(page).not.toHaveURL(/\?/);
 });
 
@@ -106,6 +106,12 @@ test('new learning modules are searchable and their map and sources work on mobi
   await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'LLM 训练与适配' }).first()).toBeVisible();
   await input.fill('ASR');
   await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '语音 AI' }).first()).toBeVisible();
+  await input.fill('概率校准');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '概率校准与不确定性' }).first()).toBeVisible();
+  await input.fill('PCA');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '无监督学习' }).first()).toBeVisible();
+  await input.fill('数据漂移');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '数据漂移与监控' }).first()).toBeVisible();
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto('notes/ai-knowledge-map/');
   await page.screenshot({ path: 'test-results/knowledge-map-desktop.png' });
@@ -120,17 +126,27 @@ test('new learning modules are searchable and their map and sources work on mobi
   await expect(page.getByRole('heading', { level: 1 })).toContainText('MCP 官方规范');
   await expect(page.locator('.prose')).toContainText('2026-07-28');
   await expect(page.locator('.prose')).toContainText('许可迁移中');
+  await page.goto('notes/ai-curriculum/');
+  await expect(page.locator('.prose')).toContainText('44 篇笔记');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/curriculum-mobile.png' });
+  await page.locator('.prose').getByRole('link', { name: '传统 ML 支线', exact: true }).click();
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(10);
+  await page.getByRole('link', { name: '数据与特征管线：先划分，再拟合', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('数据与特征管线');
 });
 
 test('RSS, missing articles and empty podcast route are honest', async ({ page, request }) => {
   const rss = await request.get('rss.xml');
   expect(rss.ok()).toBe(true);
   const xml = await rss.text();
-  expect((xml.match(/<item>/g) ?? []).length).toBe(28);
+  expect((xml.match(/<item>/g) ?? []).length).toBe(44);
   expect(xml).not.toContain('first-episode-draft');
   expect(xml).toContain('/notes/token-context/');
   expect(xml).toContain('/notes/ai-knowledge-map/');
   expect(xml).toContain('/notes/audio-asr-tts/');
+  expect(xml).toContain('/notes/ai-curriculum/');
+  expect(xml).toContain('/notes/data-drift-monitoring/');
   const draft = await request.get('episodes/first-episode-draft/');
   expect(draft.status()).toBe(404);
   await page.goto('episodes/');

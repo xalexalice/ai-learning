@@ -11,6 +11,15 @@ steps:
   - title: "深度学习训练：计算图、损失与优化"
     note: deep-learning-training
     task: "标注训练循环与梯度清零位置，解释两组假想曲线。"
+  - title: "优化与正则化：学习率、泛化与训练曲线"
+    note: optimization-regularization
+    task: "手算 SGD，解释学习率、正则化和早停的区别。"
+  - title: "PyTorch 训练实践：数据、梯度与 checkpoint"
+    note: pytorch-training-practice
+    task: "检查形状、模式、梯度状态和保存/恢复清单。"
+  - title: "迁移学习与数据增强：冻结、微调和标签一致性"
+    note: transfer-learning-augmentation
+    task: "写冻结/微调计划，检查 BatchNorm、增强标签与划分单位。"
   - title: "Transformer：注意力、位置与生成"
     note: transformer-attention
     task: "画因果掩码，标注注意力形状，解释训练与生成的并行差别。"
@@ -39,4 +48,4 @@ steps:
 
 ## 核验范围
 
-2026-10-07：5 步概念支线；本次没有下载权重、占用 GPU 或运行训练。
+2026-10-07：8 步概念支线；本次没有下载权重、占用 GPU 或运行训练。

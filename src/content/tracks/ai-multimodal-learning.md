@@ -14,6 +14,9 @@ steps:
   - title: "视觉与视觉语言模型：像素、任务与坐标"
     note: vision-foundations
     task: "区分标签、框、掩码与文字输出，手算 resize 后坐标。"
+  - title: "迁移学习与数据增强：冻结、微调和标签一致性"
+    note: transfer-learning-augmentation
+    task: "写分类/检测增强规则，先补读 PyTorch 与优化前置笔记。"
   - title: "扩散与图像生成：噪声、条件、调度器与复现"
     note: diffusion-generation
     task: "写三组单因素比较计划及完整生成配置，不填虚构结果。"
@@ -36,4 +39,4 @@ steps:
 
 ## 核验范围
 
-2026-10-07：4 步支线；没有执行视觉推理、图像生成、语音转写或音色训练。
+2026-10-07：5 步支线；没有执行视觉推理、图像生成、语音转写或音色训练。

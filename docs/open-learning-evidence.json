@@ -1,0 +1,438 @@
+{
+  "accessedAt": "2026-10-07",
+  "method": "GitHub repository searches, official-maintainer repository metadata and pinned chapter reads, public course outlines and official documentation. No private course access, course content redistribution, training, cloud deployment or paid API calls.",
+  "scope": "Second-round gap analysis against the 28 existing notes. Add 15 topic notes and one original curriculum; do not replace the first-round research.",
+  "queries": [
+    "scikit-learn official user guide GitHub",
+    "PyTorch official tutorials GitHub",
+    "fastai course22 GitHub",
+    "Made With ML official course GitHub",
+    "Full Stack Deep Learning course 2022 website repository",
+    "Google machine learning crash course recommendation systems",
+    "CS229 publicly accessible lecture notes",
+    "SciPy bootstrap permutation test official documentation"
+  ],
+  "repositories": [
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "url": "https://github.com/scikit-learn/scikit-learn",
+      "branch": "main",
+      "license": "BSD-3-Clause",
+      "archived": false,
+      "pushedAt": "2026-10-07T05:53:43Z",
+      "sha": "2f7da7445dc5a8038fe863997aa2beb3ad03f0d4",
+      "committedAt": "2026-10-07T05:53:43Z",
+      "resource": "sklearn-user-guide",
+      "rights": "代码及仓库文档 BSD-3-Clause；第三方数据另查。",
+      "access": "公开指南与源码可读；本次未安装或运行 Python 示例。官网发布版和 main 快照不是同一版本。",
+      "licensePath": "COPYING",
+      "inspectedFiles": [
+        {
+          "path": "doc/common_pitfalls.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/common_pitfalls.rst",
+          "characters": 25066
+        },
+        {
+          "path": "doc/modules/compose.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/compose.rst",
+          "characters": 24753
+        },
+        {
+          "path": "doc/modules/linear_model.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/linear_model.rst",
+          "characters": 87257
+        },
+        {
+          "path": "doc/modules/ensemble.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/ensemble.rst",
+          "characters": 74750
+        },
+        {
+          "path": "doc/modules/clustering.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/clustering.rst",
+          "characters": 94524
+        },
+        {
+          "path": "doc/modules/decomposition.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/decomposition.rst",
+          "characters": 46992
+        },
+        {
+          "path": "doc/modules/cross_validation.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/cross_validation.rst",
+          "characters": 42081
+        },
+        {
+          "path": "doc/modules/calibration.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/calibration.rst",
+          "characters": 19445
+        },
+        {
+          "path": "doc/modules/permutation_importance.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/permutation_importance.rst",
+          "characters": 10612
+        },
+        {
+          "path": "examples/applications/plot_time_series_lagged_features.py",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/examples/applications/plot_time_series_lagged_features.py",
+          "characters": 16319
+        },
+        {
+          "path": "doc/modules/preprocessing.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/preprocessing.rst",
+          "characters": 54359
+        },
+        {
+          "path": "doc/modules/tree.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/tree.rst",
+          "characters": 31479
+        },
+        {
+          "path": "doc/modules/svm.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/svm.rst",
+          "characters": 34880
+        },
+        {
+          "path": "doc/modules/neighbors.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/neighbors.rst",
+          "characters": 38743
+        },
+        {
+          "path": "doc/modules/outlier_detection.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/outlier_detection.rst",
+          "characters": 19380
+        },
+        {
+          "path": "doc/modules/model_evaluation.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/model_evaluation.rst",
+          "characters": 136046
+        },
+        {
+          "path": "doc/modules/feature_extraction.rst",
+          "url": "https://github.com/scikit-learn/scikit-learn/blob/2f7da7445dc5a8038fe863997aa2beb3ad03f0d4/doc/modules/feature_extraction.rst",
+          "characters": null
+        }
+      ],
+      "notes": [
+        "data-feature-pipelines",
+        "supervised-models",
+        "unsupervised-learning",
+        "ml-metrics-validation",
+        "calibration-uncertainty",
+        "fairness-explainability",
+        "time-series-forecasting",
+        "recommendation-ranking",
+        "experiment-statistics",
+        "nlp-task-modeling"
+      ]
+    },
+    {
+      "repo": "pytorch/tutorials",
+      "url": "https://github.com/pytorch/tutorials",
+      "branch": "main",
+      "license": "BSD-3-Clause",
+      "archived": false,
+      "pushedAt": "2026-10-06T00:27:01Z",
+      "sha": "c80a43460c838fa28efa55e5680f3e97781e288e",
+      "committedAt": "2026-10-05T22:59:36Z",
+      "resource": "pytorch-basics-course",
+      "rights": "教程仓库 BSD-3-Clause；示例图片、数据集和权重分别核对。",
+      "access": "文字与源码公开；本地训练需另配 Python/PyTorch，CPU/GPU 条件由具体实验决定。",
+      "licensePath": "LICENSE",
+      "inspectedFiles": [
+        {
+          "path": "beginner_source/basics/data_tutorial.py",
+          "url": "https://github.com/pytorch/tutorials/blob/c80a43460c838fa28efa55e5680f3e97781e288e/beginner_source/basics/data_tutorial.py",
+          "characters": 9156
+        },
+        {
+          "path": "beginner_source/basics/optimization_tutorial.py",
+          "url": "https://github.com/pytorch/tutorials/blob/c80a43460c838fa28efa55e5680f3e97781e288e/beginner_source/basics/optimization_tutorial.py",
+          "characters": 9182
+        },
+        {
+          "path": "beginner_source/basics/saveloadrun_tutorial.py",
+          "url": "https://github.com/pytorch/tutorials/blob/c80a43460c838fa28efa55e5680f3e97781e288e/beginner_source/basics/saveloadrun_tutorial.py",
+          "characters": 3424
+        },
+        {
+          "path": "beginner_source/transfer_learning_tutorial.py",
+          "url": "https://github.com/pytorch/tutorials/blob/c80a43460c838fa28efa55e5680f3e97781e288e/beginner_source/transfer_learning_tutorial.py",
+          "characters": 13312
+        }
+      ],
+      "notes": [
+        "optimization-regularization",
+        "pytorch-training-practice",
+        "transfer-learning-augmentation"
+      ]
+    },
+    {
+      "repo": "fastai/course22",
+      "url": "https://github.com/fastai/course22",
+      "branch": "master",
+      "license": null,
+      "archived": false,
+      "pushedAt": "2024-10-08T01:46:50Z",
+      "sha": "230390584ba5b990e20487d68681a9ec5b258eff",
+      "committedAt": "2024-10-08T01:46:49Z",
+      "resource": "fastai-practical-course",
+      "rights": "course22 快照未发现根 LICENSE；公开可读不等于允许复制再分发，外链书籍另有声明。",
+      "access": "课程免费阅读；Kaggle/Colab 交互运行可能需要账号及计算配额。2024 仓库提交不是课程重录日期。",
+      "licensePath": null,
+      "inspectedFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/fastai/course22/blob/230390584ba5b990e20487d68681a9ec5b258eff/README.md",
+          "characters": null
+        },
+        {
+          "path": "04-how-does-a-neural-net-really-work.ipynb",
+          "url": "https://github.com/fastai/course22/blob/230390584ba5b990e20487d68681a9ec5b258eff/04-how-does-a-neural-net-really-work.ipynb",
+          "characters": 315852
+        },
+        {
+          "path": "slides/nlp-intro.ipynb",
+          "url": "https://github.com/fastai/course22/blob/230390584ba5b990e20487d68681a9ec5b258eff/slides/nlp-intro.ipynb",
+          "characters": 133594
+        }
+      ],
+      "notes": [
+        "optimization-regularization",
+        "transfer-learning-augmentation",
+        "nlp-task-modeling"
+      ]
+    },
+    {
+      "repo": "GokuMohandas/Made-With-ML",
+      "url": "https://github.com/GokuMohandas/Made-With-ML",
+      "branch": "main",
+      "license": "MIT",
+      "archived": false,
+      "pushedAt": "2026-03-04T23:44:21Z",
+      "sha": "3361aeb8ddfc2affdba9f545c978c38c85cee764",
+      "committedAt": "2026-03-04T23:44:17Z",
+      "resource": "made-with-ml-course",
+      "rights": "仓库代码 MIT；网站文字版权声明另核对，不将整站材料都视为 MIT。",
+      "access": "公开课程与仓库可读；现场班、云部署及托管工具的访问和费用另计。本次只阅读资料。",
+      "licensePath": "LICENSE",
+      "inspectedFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/README.md",
+          "characters": 23446
+        },
+        {
+          "path": "docs/index.md",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/docs/index.md",
+          "characters": 376
+        },
+        {
+          "path": "madewithml/data.py",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/data.py",
+          "characters": 5666
+        },
+        {
+          "path": "madewithml/evaluate.py",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/evaluate.py",
+          "characters": 5632
+        },
+        {
+          "path": "tests/data/test_dataset.py",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/tests/data/test_dataset.py",
+          "characters": 978
+        },
+        {
+          "path": "tests/model/test_behavioral.py",
+          "url": "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/tests/model/test_behavioral.py",
+          "characters": 1837
+        }
+      ],
+      "notes": [
+        "mlops-lifecycle",
+        "data-drift-monitoring"
+      ]
+    },
+    {
+      "repo": "the-full-stack/the-full-stack-website",
+      "url": "https://github.com/the-full-stack/the-full-stack-website",
+      "branch": "main",
+      "license": null,
+      "archived": false,
+      "pushedAt": "2026-09-09T00:44:46Z",
+      "sha": "191019c4ba7aa5408c0f2ae9c4517d59d831209d",
+      "committedAt": "2026-09-09T00:44:23Z",
+      "resource": "fsdl-production-course",
+      "rights": "官网仓库未发现覆盖整站的根 LICENSE；课程公开阅读，未推断转载授权。",
+      "access": "2022 课程已结束，讲义/视频/实验材料免费公开；网站 2026 更新不代表每节课技术栈都已更新。",
+      "licensePath": null,
+      "inspectedFiles": [
+        {
+          "path": "docs/course/2022/lecture-4-data-management/index.md",
+          "url": "https://github.com/the-full-stack/the-full-stack-website/blob/191019c4ba7aa5408c0f2ae9c4517d59d831209d/docs/course/2022/lecture-4-data-management/index.md",
+          "characters": 17198
+        },
+        {
+          "path": "docs/course/2022/lecture-5-deployment/index.md",
+          "url": "https://github.com/the-full-stack/the-full-stack-website/blob/191019c4ba7aa5408c0f2ae9c4517d59d831209d/docs/course/2022/lecture-5-deployment/index.md",
+          "characters": 32576
+        },
+        {
+          "path": "docs/course/2022/lecture-6-continual-learning/index.md",
+          "url": "https://github.com/the-full-stack/the-full-stack-website/blob/191019c4ba7aa5408c0f2ae9c4517d59d831209d/docs/course/2022/lecture-6-continual-learning/index.md",
+          "characters": 44449
+        }
+      ],
+      "notes": [
+        "mlops-lifecycle",
+        "data-drift-monitoring"
+      ]
+    }
+  ],
+  "webResources": [
+    {
+      "resource": "google-ml-crash-course",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "version": "持续维护网页；分类指标页 2026-01-12",
+      "rights": "网页内容默认 CC-BY-4.0、示例代码 Apache-2.0，以各页例外声明为准。",
+      "access": "公开网页可读；浏览器练习与 Colab 环境、账号或配额要求应逐项检查。",
+      "readings": [
+        [
+          "分类指标",
+          "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        ],
+        [
+          "偏差评估",
+          "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        ]
+      ],
+      "notes": [
+        "data-feature-pipelines",
+        "ml-metrics-validation",
+        "fairness-explainability"
+      ]
+    },
+    {
+      "resource": "google-recommendation-course",
+      "url": "https://developers.google.com/machine-learning/recommendation",
+      "version": "课程首页更新 2025-08-25",
+      "rights": "网页内容默认 CC-BY-4.0、示例代码 Apache-2.0，以各页声明为准。",
+      "access": "课程概念页免费阅读；不保证外部实验或托管算力免费可用。",
+      "readings": [
+        [
+          "推荐类型",
+          "https://developers.google.com/machine-learning/recommendation/overview/types"
+        ],
+        [
+          "课程总览",
+          "https://developers.google.com/machine-learning/recommendation"
+        ]
+      ],
+      "notes": [
+        "recommendation-ranking"
+      ]
+    },
+    {
+      "resource": "stanford-cs229-archive",
+      "url": "https://cs229.stanford.edu/index.html-backup-summer23",
+      "version": "2023 目录；已读监督学习讲义标注 2018/2019",
+      "rights": "历史讲义未确认可再分发许可；仅链接与原创整理。",
+      "access": "核验的历史讲义公开可读；2026 夏季当前课程大纲/材料需要 Stanford 账号。未尝试获取受限资料。",
+      "readings": [
+        [
+          "监督学习历史讲义（PDF）",
+          "https://cs229.stanford.edu/summer2023/cs229-notes1.pdf"
+        ],
+        [
+          "当前课程访问条件",
+          "https://cs229.stanford.edu/"
+        ]
+      ],
+      "notes": [
+        "supervised-models"
+      ]
+    },
+    {
+      "resource": "scipy-statistics-guide",
+      "url": "https://docs.scipy.org/doc/scipy/reference/stats.html",
+      "version": "已读 API 页面标示 SciPy 1.18.0",
+      "rights": "SciPy v1.18.0 根 LICENSE.txt 为 BSD-3-Clause；外部参考书和论文另查。",
+      "access": "API 文档公开可读；本次统计例子为手算/实验设计，未运行 SciPy。",
+      "readings": [
+        [
+          "bootstrap",
+          "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html"
+        ],
+        [
+          "permutation_test",
+          "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html"
+        ],
+        [
+          "v1.18.0 许可",
+          "https://github.com/scipy/scipy/blob/v1.18.0/LICENSE.txt"
+        ]
+      ],
+      "notes": [
+        "experiment-statistics"
+      ]
+    }
+  ],
+  "existingSourceExtension": {
+    "repo": "huggingface/course",
+    "sha": "8b893f0ede6c781045692a7f892f25a0c92b4805",
+    "resource": "hf-llm-course",
+    "inspectedFiles": [
+      {
+        "path": "chapters/en/chapter7/1.mdx",
+        "characters": 2384
+      },
+      {
+        "path": "chapters/en/chapter7/2.mdx",
+        "characters": 44302
+      },
+      {
+        "path": "chapters/en/chapter7/3.mdx",
+        "characters": 50872
+      },
+      {
+        "path": "chapters/en/chapter7/5.mdx",
+        "characters": 59218
+      },
+      {
+        "path": "chapters/en/chapter7/7.mdx",
+        "characters": 58096
+      }
+    ],
+    "note": "nlp-task-modeling"
+  },
+  "additionalOfficialReads": [
+    {
+      "url": "https://docs.pytorch.org/docs/2.14/generated/torch.optim.AdamW.html",
+      "purpose": "Decoupled weight decay, version 2.14 shown by official stable redirect."
+    },
+    {
+      "url": "https://github.com/scipy/scipy/blob/v1.18.0/LICENSE.txt",
+      "purpose": "Verified BSD-3-Clause root license."
+    },
+    {
+      "url": "https://course.fast.ai/Lessons/lesson7.html",
+      "purpose": "Public lesson outline including collaborative filtering."
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/recommendation/collaborative/matrix",
+      "purpose": "Observed/unobserved interactions and factorization; page updated 2025-08-25."
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/recommendation/dnn/re-ranking",
+      "purpose": "Re-ranking stage and constraints."
+    }
+  ],
+  "cautions": [
+    "CS229 Summer 2026 course syllabus/materials require Stanford access; only public historical notes used. The supervised-learning PDF is hosted in summer2023 but internally marked Fall 2018 / slightly updated June 28 2019.",
+    "Website/Git commit date is not course edition date. FSDL and fast.ai materials read are the 2022 course.",
+    "scikit-learn stable user guide reports 1.9.1; main commit is a separate snapshot. No claim of runnable API compatibility.",
+    "Google pages have CC-BY-4.0 content / Apache-2.0 example-code footer, with exceptions; MIT Made With ML repo does not license all website text.",
+    "No root license found in fastai/course22 or the-full-stack website snapshot; only original synthesis and links.",
+    "New examples are hand calculations or designs. No new model or statistical experiment results are claimed."
+  ]
+}
