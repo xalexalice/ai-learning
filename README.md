@@ -2,9 +2,11 @@
 
 可运行的中文 AI 学习知识站。以 AstroPaper 的静态博客结构为基础，使用 Astro、TypeScript 与 Markdown；学习路径串起概念笔记和可复现实验，资料卡回链原始来源。
 
-包含首页、知识笔记、资料库、路径章节、主题、中文全文搜索、文字 RSS、站点地图和 GitHub Pages 工作流。已有 7 条路径、42 篇概念笔记、1 篇系统大纲、1 篇实际运行的实验与 28 张资料卡，覆盖 8 个 AI 学习主题。音频集合和播放器页面已预留，没有真实节目时隐藏播客导航。
+包含首页、知识笔记、资料库、路径章节、主题、中文全文搜索、文字 RSS、站点地图和 GitHub Pages 工作流。已有 9 条路径、50 篇概念笔记、2 篇路线/大纲、2 篇实际运行的实验与 32 张资料卡，覆盖 8 个 AI 学习主题。音频集合和播放器页面已预留，没有真实节目时隐藏播客导航。
 
 系统学习从 [AI 知识地图](src/content/notes/ai-knowledge-map.md)、[系统大纲](src/content/notes/ai-curriculum.md) 和 [21 步主线](src/content/tracks/ai-systematic-learning.md) 开始；支线覆盖传统 ML、MLOps、RAG/智能体、模型训练与多模态。首轮 14 个 GitHub 来源见 [学习资料目录](docs/learning-sources.md)；第二轮 9 张开放资料卡、缺口比较、版本/许可与补充索引见 [开放学习对照](docs/learning-gap-analysis.md)。笔记包含知识点、示例、练习和复习问题；未执行的模型练习没有实验成绩。
+
+面向开发与架构的后续从 [应用实战路线](src/content/notes/ai-application-roadmap.md) 进入 [7 步开发实践](src/content/tracks/ai-app-practice.md) 和 [6 步架构/面试](src/content/tracks/ai-architecture-interview.md)。本轮补充后端、RAG/agent 项目验收、容量成本、系统设计、SLO 与面试案例；[来源与版本](docs/practice-learning-sources.md) 记录四组资料，`docs/practice/` 提供项目、评估、架构与复盘工作表。权限/缓存实验用自制数据实测，不代表完整模型项目已完成。
 
 ## 本地运行
 
@@ -33,6 +35,7 @@ npx playwright install chromium
 npm run test:browser           # 搜索、筛选、手机阅读、键盘、RSS
 npm run test:publication       # 草稿/审核/未来内容排除，撤下文章后重建
 node scripts/retrieval-lab.mjs # 打印已记录的关键词实验结果
+node scripts/access-cache-lab.mjs # 打印权限/缓存对照与已知边界
 ```
 
 macOS 已安装 Chrome 时，可使用 `PLAYWRIGHT_CHROME_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run test:browser`，无需额外下载 Chromium。CI 使用 Playwright Chromium。

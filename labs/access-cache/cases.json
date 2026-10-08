@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {"id":"public-a","tenant":"alpha","readers":["*"],"text":"RAG alpha 公开学习材料"},
+    {"id":"private-a","tenant":"alpha","readers":["alice"],"text":"预算 alpha 自制计划 V1"},
+    {"id":"private-b","tenant":"beta","readers":["carol"],"text":"预算 beta 自制计划 V1"}
+  ],
+  "users": {
+    "alice":{"id":"alice","tenant":"alpha"},
+    "bob":{"id":"bob","tenant":"alpha"},
+    "carol":{"id":"carol","tenant":"beta"}
+  },
+  "cases": [
+    {"id":"cold-public","user":"alice","query":"RAG","expected":[{"id":"public-a","text":"RAG alpha 公开学习材料"}]},
+    {"id":"warm-public","user":"alice","query":"RAG","expected":[{"id":"public-a","text":"RAG alpha 公开学习材料"}]},
+    {"id":"authorized-private","user":"alice","query":"预算","expected":[{"id":"private-a","text":"预算 alpha 自制计划 V1"}]},
+    {"id":"other-user","user":"bob","query":"预算","expected":[]},
+    {"id":"other-tenant","user":"carol","query":"预算","expected":[{"id":"private-b","text":"预算 beta 自制计划 V1"}]},
+    {"id":"updated-document","user":"alice","query":"预算","mutation":{"type":"update","id":"private-a","text":"预算 alpha 自制计划 V2"},"expected":[{"id":"private-a","text":"预算 alpha 自制计划 V2"}]},
+    {"id":"revoked-access","user":"alice","query":"预算","mutation":{"type":"revoke","id":"private-a"},"expected":[]},
+    {"id":"deleted-document","user":"alice","query":"预算","mutation":{"type":"delete","id":"private-a"},"expected":[]},
+    {"id":"same-tenant-public","user":"bob","query":"RAG","expected":[{"id":"public-a","text":"RAG alpha 公开学习材料"}]},
+    {"id":"public-is-tenant-scoped","user":"carol","query":"RAG","expected":[]}
+  ]
+}

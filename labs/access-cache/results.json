@@ -1,0 +1,305 @@
+{
+  "dataset": "3 self-written documents, 3 fixture identities, 10 ordered queries; substring retrieval, no model/API",
+  "rows": [
+    {
+      "id": "cold-public",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "RAG",
+      "expected": [
+        {
+          "id": "public-a",
+          "text": "RAG alpha 公开学习材料"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": false
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": false
+      },
+      "baselinePass": true,
+      "scopedPass": true
+    },
+    {
+      "id": "warm-public",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "RAG",
+      "expected": [
+        {
+          "id": "public-a",
+          "text": "RAG alpha 公开学习材料"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": true
+      },
+      "baselinePass": true,
+      "scopedPass": true
+    },
+    {
+      "id": "authorized-private",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "预算",
+      "expected": [
+        {
+          "id": "private-a",
+          "text": "预算 alpha 自制计划 V1"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": false
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": false
+      },
+      "baselinePass": true,
+      "scopedPass": true
+    },
+    {
+      "id": "other-user",
+      "user": "bob",
+      "tenant": "alpha",
+      "query": "预算",
+      "expected": [],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    },
+    {
+      "id": "other-tenant",
+      "user": "carol",
+      "tenant": "beta",
+      "query": "预算",
+      "expected": [
+        {
+          "id": "private-b",
+          "text": "预算 beta 自制计划 V1"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "private-b",
+            "text": "预算 beta 自制计划 V1"
+          }
+        ],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    },
+    {
+      "id": "updated-document",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "预算",
+      "expected": [
+        {
+          "id": "private-a",
+          "text": "预算 alpha 自制计划 V2"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V2"
+          }
+        ],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    },
+    {
+      "id": "revoked-access",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "预算",
+      "expected": [],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    },
+    {
+      "id": "deleted-document",
+      "user": "alice",
+      "tenant": "alpha",
+      "query": "预算",
+      "expected": [],
+      "baseline": {
+        "documents": [
+          {
+            "id": "private-a",
+            "text": "预算 alpha 自制计划 V1"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    },
+    {
+      "id": "same-tenant-public",
+      "user": "bob",
+      "tenant": "alpha",
+      "query": "RAG",
+      "expected": [
+        {
+          "id": "public-a",
+          "text": "RAG alpha 公开学习材料"
+        }
+      ],
+      "baseline": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": false
+      },
+      "baselinePass": true,
+      "scopedPass": true
+    },
+    {
+      "id": "public-is-tenant-scoped",
+      "user": "carol",
+      "tenant": "beta",
+      "query": "RAG",
+      "expected": [],
+      "baseline": {
+        "documents": [
+          {
+            "id": "public-a",
+            "text": "RAG alpha 公开学习材料"
+          }
+        ],
+        "cacheHit": true
+      },
+      "scoped": {
+        "documents": [],
+        "cacheHit": false
+      },
+      "baselinePass": false,
+      "scopedPass": true
+    }
+  ],
+  "baselinePasses": 4,
+  "scopedPasses": 10,
+  "total": 10,
+  "boundary": {
+    "scenario": "content changed without advancing corpusRevision",
+    "expected": [
+      {
+        "id": "private-a",
+        "text": "预算 alpha 自制计划 V2"
+      }
+    ],
+    "actual": [
+      {
+        "id": "private-a",
+        "text": "预算 alpha 自制计划 V1"
+      }
+    ],
+    "cacheHit": true,
+    "passes": false
+  }
+}

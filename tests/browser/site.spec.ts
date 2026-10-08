@@ -28,14 +28,14 @@ test('home and the full learning path navigate under the project base', async ({
 
 test('resource filters, empty results and reset preserve a usable list', async ({ page }) => {
   await page.goto('resources/');
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(28);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(32);
   await page.getByLabel('主题', { exact: true }).selectOption('rag');
   await page.getByLabel('资料类型').selectOption('paper');
   await expect(page.locator('[data-content-card]:visible')).toHaveCount(1);
   await page.getByLabel('标题或标签').fill('nothing-can-match-this');
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: '清除筛选' }).click();
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(28);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(32);
   await expect(page).not.toHaveURL(/\?/);
 });
 
@@ -127,7 +127,7 @@ test('new learning modules are searchable and their map and sources work on mobi
   await expect(page.locator('.prose')).toContainText('2026-07-28');
   await expect(page.locator('.prose')).toContainText('许可迁移中');
   await page.goto('notes/ai-curriculum/');
-  await expect(page.locator('.prose')).toContainText('44 篇笔记');
+  await expect(page.locator('.prose')).toContainText('54 篇笔记');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: 'test-results/curriculum-mobile.png' });
   await page.locator('.prose').getByRole('link', { name: '传统 ML 支线', exact: true }).click();
@@ -136,17 +136,49 @@ test('new learning modules are searchable and their map and sources work on mobi
   await expect(page.getByRole('heading', { level: 1 })).toContainText('数据与特征管线');
 });
 
+test('practice route, cache results, licences and new terms can be read and searched', async ({ page }) => {
+  await page.goto('search/?q=幂等');
+  const input = page.locator('.pagefind-ui__search-input');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'AI 服务后端' }).first()).toBeVisible();
+  await input.fill('错误预算');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'AI 服务可靠性' }).first()).toBeVisible();
+  await input.fill('面试');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'AI 开发与架构面试' }).first()).toBeVisible();
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('notes/ai-application-roadmap/');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('AI 应用实战路线');
+  await page.screenshot({ path: 'test-results/practice-route-desktop.png' });
+  await page.setViewportSize({ width: 375, height: 812 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/practice-route-mobile.png' });
+  await page.locator('.prose').getByRole('link', { name: '应用开发实战路径', exact: true }).click();
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(7);
+  await page.getByRole('link', { name: '权限与缓存实验：同问不同人、撤权与版本', exact: true }).click();
+  await expect(page.locator('.prose')).toContainText('基线 4/10；改进 10/10');
+  await expect(page.locator('.prose')).toContainText('与期望 V2 不符');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/access-cache-mobile.png' });
+  await page.getByRole('link', { name: 'System Design Primer：容量、缓存与设计面试', exact: true }).click();
+  await expect(page.locator('.prose')).toContainText('CC BY 4.0');
+  await page.goto('resources/llm-zoomcamp-practice/');
+  await expect(page.locator('.prose')).toContainText('未发现根 LICENSE');
+  await page.goto('tracks/ai-architecture-interview/');
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(6);
+});
+
 test('RSS, missing articles and empty podcast route are honest', async ({ page, request }) => {
   const rss = await request.get('rss.xml');
   expect(rss.ok()).toBe(true);
   const xml = await rss.text();
-  expect((xml.match(/<item>/g) ?? []).length).toBe(44);
+  expect((xml.match(/<item>/g) ?? []).length).toBe(54);
   expect(xml).not.toContain('first-episode-draft');
   expect(xml).toContain('/notes/token-context/');
   expect(xml).toContain('/notes/ai-knowledge-map/');
   expect(xml).toContain('/notes/audio-asr-tts/');
   expect(xml).toContain('/notes/ai-curriculum/');
   expect(xml).toContain('/notes/data-drift-monitoring/');
+  expect(xml).toContain('/notes/ai-application-roadmap/');
+  expect(xml).toContain('/notes/retrieval-access-cache-lab/');
   const draft = await request.get('episodes/first-episode-draft/');
   expect(draft.status()).toBe(404);
   await page.goto('episodes/');

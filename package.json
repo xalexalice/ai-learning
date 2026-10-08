@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npm run content:check && astro dev --ignore-lock",
     "content:check": "node scripts/check-content.ts",
-    "test": "node --test tests/content.test.ts && node scripts/retrieval-lab.mjs --check",
+    "test": "node --test tests/content.test.ts && node scripts/retrieval-lab.mjs --check && node scripts/access-cache-lab.mjs --check",
     "check": "npm run content:check && npm test && astro check",
     "build": "node scripts/clean.mjs && npm run check && astro build && pagefind --site dist && node scripts/check-dist.mjs",
     "preview": "astro preview --ignore-lock",

@@ -1,0 +1,242 @@
+{
+  "checkedOn": "2026-10-08",
+  "purpose": "User-approved application engineering, complete projects, architecture and interview learning supplement",
+  "method": "GitHub API branch/push metadata and files pinned to commit; official open web chapters read. No upstream course text/images/code copied. No model/API/GPU/cloud publication run.",
+  "repositories": [
+    {
+      "repo": "DataTalksClub/llm-zoomcamp",
+      "url": "https://github.com/DataTalksClub/llm-zoomcamp",
+      "branch": "main",
+      "sha": "c04d02f2ea7171d0be1e2b17d555c49651f2b5a3",
+      "committedAt": "2026-09-14T16:53:58Z",
+      "pushedAt": "2026-09-15T08:16:11Z",
+      "detectedLicense": null,
+      "archived": false,
+      "rootLicenseVerification": "Recursive tree at snapshot contains no root LICENSE; no reuse permission inferred",
+      "readFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/DataTalksClub/llm-zoomcamp/blob/c04d02f2ea7171d0be1e2b17d555c49651f2b5a3/README.md"
+        },
+        {
+          "path": "project.md",
+          "url": "https://github.com/DataTalksClub/llm-zoomcamp/blob/c04d02f2ea7171d0be1e2b17d555c49651f2b5a3/project.md"
+        },
+        {
+          "path": "01-agentic-rag/README.md",
+          "url": "https://github.com/DataTalksClub/llm-zoomcamp/blob/c04d02f2ea7171d0be1e2b17d555c49651f2b5a3/01-agentic-rag/README.md"
+        },
+        {
+          "path": "04-evaluation/README.md",
+          "url": "https://github.com/DataTalksClub/llm-zoomcamp/blob/c04d02f2ea7171d0be1e2b17d555c49651f2b5a3/04-evaluation/README.md"
+        },
+        {
+          "path": "05-monitoring/README.md",
+          "url": "https://github.com/DataTalksClub/llm-zoomcamp/blob/c04d02f2ea7171d0be1e2b17d555c49651f2b5a3/05-monitoring/README.md"
+        }
+      ],
+      "scope": "从检索和工具调用到完整应用、评估、监控与项目文档，作为应用工程练习参考。",
+      "rights": "核验快照未发现根 LICENSE，API 未识别许可；公开可读不等于可任意再分发。本站仅原创整理和链接。"
+    },
+    {
+      "repo": "huggingface/agents-course",
+      "url": "https://github.com/huggingface/agents-course",
+      "branch": "main",
+      "sha": "3c469e773ec04e5f338b727ff20e3a6ea823ff81",
+      "committedAt": "2026-10-06T09:31:03Z",
+      "pushedAt": "2026-10-06T09:33:07Z",
+      "detectedLicense": "Apache-2.0",
+      "archived": false,
+      "rootLicenseVerification": "LICENSE read: Apache License, Version 2.0",
+      "readFiles": [
+        {
+          "path": "units/en/unit0/introduction.mdx",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/units/en/unit0/introduction.mdx"
+        },
+        {
+          "path": "units/en/unit2/langgraph/building_blocks.mdx",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/units/en/unit2/langgraph/building_blocks.mdx"
+        },
+        {
+          "path": "units/en/unit3/agentic-rag/agent.mdx",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/units/en/unit3/agentic-rag/agent.mdx"
+        },
+        {
+          "path": "units/en/unit4/introduction.mdx",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/units/en/unit4/introduction.mdx"
+        },
+        {
+          "path": "units/en/unit4/hands-on.mdx",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/units/en/unit4/hands-on.mdx"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/huggingface/agents-course/blob/3c469e773ec04e5f338b727ff20e3a6ea823ff81/LICENSE"
+        }
+      ],
+      "scope": "用 state、node、edge 组织智能体，完成工具组合、Agentic RAG 与评估项目。",
+      "rights": "仓库根 LICENSE 为 Apache-2.0；数据、模型、课程图片和外链材料分别核对。"
+    },
+    {
+      "repo": "donnemartin/system-design-primer",
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "branch": "master",
+      "sha": "ae9bbd7b02d90b9866215de185217d33f39ab733",
+      "committedAt": "2026-03-20T01:52:18Z",
+      "pushedAt": "2026-09-15T01:10:09Z",
+      "detectedLicense": "NOASSERTION",
+      "archived": false,
+      "rootLicenseVerification": "LICENSE.txt read: Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "readFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/README.md"
+        },
+        {
+          "path": "README-zh-Hans.md",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/README-zh-Hans.md"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/LICENSE.txt"
+        }
+      ],
+      "scope": "需求与约束、容量估算、负载、缓存、异步队列、存储和系统设计讨论方法。",
+      "rights": "根 LICENSE.txt 为 CC BY 4.0；外链、引用图片及第三方材料按各自声明核对。"
+    }
+  ],
+  "webPages": [
+    {
+      "title": "Implementing SLOs",
+      "url": "https://sre.google/workbook/implementing-slos/",
+      "observed": "Read official chapter; update date not specified",
+      "redistribution": "Not verified; original synthesis and links only"
+    },
+    {
+      "title": "Alerting on SLOs",
+      "url": "https://sre.google/workbook/alerting-on-slos/",
+      "observed": "Read official chapter; update date not specified",
+      "redistribution": "Not verified; original synthesis and links only"
+    },
+    {
+      "title": "Managing Load",
+      "url": "https://sre.google/workbook/managing-load/",
+      "observed": "Read official chapter; update date not specified",
+      "redistribution": "Not verified; original synthesis and links only"
+    },
+    {
+      "title": "Identifying and Recovering from Overload",
+      "url": "https://sre.google/workbook/overload/",
+      "observed": "Read official chapter; update date not specified",
+      "redistribution": "Not verified; original synthesis and links only"
+    },
+    {
+      "title": "Server-sent events",
+      "url": "https://html.spec.whatwg.org/multipage/server-sent-events.html",
+      "observed": "Event framing, EventSource API, reconnection/Last-Event-ID; not a business idempotency guarantee"
+    },
+    {
+      "title": "Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "observed": "Authorization per request; identity trusted by application, not model/user-provided body"
+    }
+  ],
+  "content": [
+    {
+      "slug": "ai-service-backend",
+      "kind": "concept",
+      "sources": [
+        "llm-zoomcamp-practice",
+        "system-design-primer"
+      ]
+    },
+    {
+      "slug": "rag-capstone-spec",
+      "kind": "concept",
+      "sources": [
+        "llm-zoomcamp-practice",
+        "datawhale-llm-universe"
+      ]
+    },
+    {
+      "slug": "agent-project-validation",
+      "kind": "concept",
+      "sources": [
+        "hf-agents-practice",
+        "llm-zoomcamp-practice"
+      ]
+    },
+    {
+      "slug": "ai-capacity-cost",
+      "kind": "concept",
+      "sources": [
+        "system-design-primer",
+        "google-sre-workbook",
+        "vllm-serving-docs"
+      ]
+    },
+    {
+      "slug": "ai-system-design",
+      "kind": "concept",
+      "sources": [
+        "system-design-primer",
+        "llm-zoomcamp-practice",
+        "google-sre-workbook"
+      ]
+    },
+    {
+      "slug": "ai-slo-reliability",
+      "kind": "concept",
+      "sources": [
+        "google-sre-workbook"
+      ]
+    },
+    {
+      "slug": "ai-project-evaluation",
+      "kind": "concept",
+      "sources": [
+        "llm-zoomcamp-practice",
+        "ragas-evaluation-docs"
+      ]
+    },
+    {
+      "slug": "ai-interview-casebook",
+      "kind": "concept",
+      "sources": [
+        "system-design-primer",
+        "google-sre-workbook",
+        "llm-zoomcamp-practice",
+        "hf-agents-practice"
+      ]
+    },
+    {
+      "slug": "ai-application-roadmap",
+      "kind": "recap",
+      "sources": [
+        "llm-zoomcamp-practice",
+        "hf-agents-practice",
+        "system-design-primer",
+        "google-sre-workbook"
+      ]
+    },
+    {
+      "slug": "retrieval-access-cache-lab",
+      "kind": "lab",
+      "sources": [
+        "system-design-primer",
+        "llm-zoomcamp-practice"
+      ]
+    }
+  ],
+  "experiment": {
+    "fixture": "labs/access-cache/cases.json",
+    "script": "scripts/access-cache-lab.mjs",
+    "record": "labs/access-cache/results.json",
+    "environment": "macOS, Node.js 24.21.0",
+    "baselineMatches": 4,
+    "scopedMatches": 10,
+    "cases": 10,
+    "knownBoundary": "Changing document content without advancing corpusRevision returns stale readable content",
+    "scope": "3 self-written documents, 3 trusted fixture identities, 2 tenants, substring retrieval; no real authentication/vector/model/distributed cache"
+  }
+}
