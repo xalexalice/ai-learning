@@ -31,8 +31,7 @@
   .site-header { border-bottom: 1px solid var(--line); }
   .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 108px; gap: 20px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 19px; font-weight: 650; flex-shrink: 0; }
-  .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--accent); border-radius: 10px; color: var(--accent); }
-  .brand-mark svg { width: 25px; }
+  .brand-mark { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
   .brand small { display: block; font-size: 9px; letter-spacing: .16em; font-weight: 450; color: var(--muted); margin-top: 2px; }
   .main-nav { display: flex; align-items: center; gap: 20px; }
   .main-nav a { display: flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 14px; border-bottom: 2px solid transparent; }

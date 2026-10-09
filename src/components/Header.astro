@@ -9,7 +9,7 @@ const active = stripBase(Astro.url.pathname).split('/')[1];
 <header class="site-header" data-pagefind-ignore>
   <div class="wrap header-inner">
     <a class="brand" href={withBase()} aria-label={`${site.title}，首页`}>
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5c3-1 5-1 8 1 3-2 5-2 8-1v13c-3-1-5-1-8 1-3-2-5-2-8-1zM12 6.5v13" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg></span>
+      <img class="brand-mark" src={withBase('logo.png')} width="42" height="42" alt="" />
       <span>{site.title}<small>LEARN · BUILD · REFLECT</small></span>
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">菜单</button>
