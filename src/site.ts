@@ -2,8 +2,8 @@ export const site = {
   title: 'AI 学习手记',
   author: 'x',
   description: '从原始资料出发，用笔记理解，用实验验证，沿着路径系统学习 AI。',
-  // Fill these after choosing the repository and podcast host.
-  repository: '',
+  repository: 'https://github.com/xalexalice/ai-learning',
+  // Fill this after choosing the podcast host.
   podcastFeed: '',
 };
 

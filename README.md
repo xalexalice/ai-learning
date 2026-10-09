@@ -59,7 +59,7 @@ macOS 已安装 Chrome 时，可使用 `PLAYWRIGHT_CHROME_EXECUTABLE='/Applicati
 
 ## GitHub Pages
 
-项目尚未推送到 GitHub，当前没有线上 URL。发布步骤见 [部署说明](docs/deployment.md)。两个工作流分别负责 PR/主分支检查和主分支发布；PR 仅有读取权限。
+项目仓库：[xalexalice/ai-learning](https://github.com/xalexalice/ai-learning)。站点由 GitHub Pages 工作流发布，正式访问地址以仓库 Pages 部署结果为准。发布与维护步骤见 [部署说明](docs/deployment.md)。两个工作流分别负责 PR/主分支检查和主分支发布；PR 仅有读取权限。
 
 Pages 构建从 GitHub `configure-pages` 的输出读取实际域名与子路径，也支持个人站根地址和自定义域名。手动生产构建可用：
 

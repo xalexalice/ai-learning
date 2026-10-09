@@ -1,17 +1,17 @@
 # 发布到 GitHub Pages
 
-代码与本地构建已完成，仓库地址、公开许可和第一次线上部署尚未确定。
+发布仓库是 [xalexalice/ai-learning](https://github.com/xalexalice/ai-learning)，使用 GitHub Pages 的 Actions 发布方式。原创部分继续使用 CONTENT_POLICY.md 的现有声明，公开仓库不自动授予 MIT 或 Creative Commons 许可。
 
 ## 首次发布
 
-1. 作者通读首批内容，确认 `src/site.ts` 的站名和署名，确定新增代码与原创文字的许可，更新 `CONTENT_POLICY.md` 和关于页。
-2. 创建单独的 GitHub 仓库，只推送本项目目录。不要把 `vibe-ai` 的其他项目、`node_modules`、`.env` 或私有材料加入仓库。
-3. 把仓库 URL 写入 `src/site.ts` 的 `repository`。
+1. 维护者核对内容与署名；新增代码和原创文字的许可若要变更，单独更新 `CONTENT_POLICY.md` 和关于页。
+2. 本项目使用独立公开仓库，只推送本项目目录。不要把 `vibe-ai` 的其他项目、`node_modules`、`.env` 或私有材料加入仓库。
+3. `src/site.ts` 的 `repository` 已指向本项目仓库。
 4. 在仓库 Settings → Pages → Build and deployment 中选择 GitHub Actions。
 5. 推送 `main` 或手动运行 Publish to GitHub Pages。工作流读取实际 Pages `origin` 与 `base_path`，生成正确的 canonical、资源 URL、搜索、RSS 和站点地图。
 6. 查看 Actions 部署结果，再访问返回的真实页面地址。验收首页、中文搜索、手机笔记、RSS 和错误页。
 
-工作流不会自动启用 Pages；这一步需要仓库管理员操作。当前没有创建远程仓库或改动任何 GitHub 设置。
+首次发布由仓库管理员启用 Pages。之后推送 `main` 会自动构建和部署，也可在 Actions 手动运行 Publish to GitHub Pages；成功的网址以部署结果为准。
 
 ## 手动配置
 
