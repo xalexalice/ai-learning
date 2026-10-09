@@ -26,12 +26,15 @@ async function search(state) {
   // Fresh page per build avoids an in-memory copy of the previous search index.
   const page = await browser.newPage();
   await page.goto(`http://127.0.0.1:4372${base}search/`);
-  const count = await page.evaluate(async ({ base, term }) => {
+  const results = await page.evaluate(async ({ base, term }) => {
     const pagefind = await import(`${base}pagefind/pagefind.js`);
-    return (await pagefind.search(term)).results.length;
+    return await Promise.all((await pagefind.search(term)).results.map(async hit => {
+      const data = await hit.data();
+      return { path: new URL(data.url, location.origin).pathname, content: data.content };
+    }));
   }, { base, term: `regression${state}sentinel` });
   await page.close();
-  return count;
+  return results;
 }
 async function noArtifact(state) {
   await assert.rejects(access(`dist/notes/regression-${state}/index.html`));
@@ -39,7 +42,9 @@ async function noArtifact(state) {
     const text = await readFile(path, 'utf8');
     assert(!text.includes(`regression-${state}`) && !text.includes(`regression${state}sentinel`), `Leaked ${state} content in ${path}`);
   }
-  assert.equal(await search(state), 0, `${state} content remains searchable`);
+  // Pagefind can shorten an unknown term and match unrelated "regression" course links.
+  const results = await search(state);
+  assert(!results.some(hit => hit.path === `${base}notes/regression-${state}/` || hit.content.includes(`regression${state}sentinel`)), `${state} content remains searchable`);
 }
 try {
   for (let i = 0; i < states.length; i++) {
@@ -61,7 +66,8 @@ try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.PLAYWRIGHT_CHROME_EXECUTABLE });
   for (const state of ['draft', 'review', 'future']) await noArtifact(state);
   await access('dist/notes/regression-public/index.html');
-  assert.equal(await search('public'), 1, 'The positive control must be indexed');
+  const positive = (await search('public')).filter(hit => hit.path === `${base}notes/regression-public/` && hit.content.includes('regressionpublicsentinel'));
+  assert.equal(positive.length, 1, 'The positive control must be indexed');
   await writeFile(fixtureFiles[3], fixture('public').replace('status: published', 'status: review'));
   build();
   await noArtifact('public');
