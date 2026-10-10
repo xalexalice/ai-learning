@@ -1,0 +1,168 @@
+{
+  "accessedAt": "2026-10-10",
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "branch": "main",
+  "sha": "dbc046eb896ac4e39aa19c7774c8bf49583b89a6",
+  "committedAt": "2026-09-30T03:03:28Z",
+  "edition": "README identifies manuscript as 2.0",
+  "rootLicense": "Apache-2.0; Copyright 2025 Bojie Li; subproject and external rights require separate checks",
+  "reviewScope": "Compared all ten chapter headings and summaries; reviewed selected context, memory, harness, interaction, evaluation, training and evolution passages, and selected experiment READMEs. This is not a line-by-line audit of all book text or 109 experiments.",
+  "readFiles": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/README.md",
+      "sha256": "21195bfba51235eeba6f272e6454ab046f0791b3b2bf260417c56b8f4abb95a2"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/LICENSE",
+      "sha256": "2a9d82c7f37caadf72436764de67e4042942b8dea2ec9456ed5c43daf7eba074"
+    },
+    {
+      "path": "pyproject.toml",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/pyproject.toml",
+      "sha256": "03a50420e6eb8b541e468b7275041b7fd59c56b642431113c9ff875ce4470125"
+    },
+    {
+      "path": "book/chapter1.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter1.md",
+      "sha256": "03f1c8e82fbb112758e0ed85b147b3aaef3083b7389c6d9aac0d5abe3c0474c5"
+    },
+    {
+      "path": "book/chapter2.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter2.md",
+      "sha256": "a64c23de09c1108b2c038184b06ed89f0b0929fd1e08208e25b5d983d268af59"
+    },
+    {
+      "path": "book/chapter3.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter3.md",
+      "sha256": "aef4bd529d906b7cd1fa32ab25e55ef88254a9220d769bebead423b1c754d6bc"
+    },
+    {
+      "path": "book/chapter4.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter4.md",
+      "sha256": "2b08715724e111bfae237e4b1660070ee844ccb3e5ed9f54b92e8d0ab4f30394"
+    },
+    {
+      "path": "book/chapter5.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter5.md",
+      "sha256": "f6153570ccd5dd763a4f1cfbb01bcc8eb3d6012738ec5645db720d733f86019f"
+    },
+    {
+      "path": "book/chapter6.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter6.md",
+      "sha256": "952cd29bcd63e6bcf599a240b34487f852e55154f7ec21af65af06042558f1e6"
+    },
+    {
+      "path": "book/chapter7.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter7.md",
+      "sha256": "30bbc29c9826d0223bd9d10393378f3f01970d9af88b9f9d2115dfaca54218e8"
+    },
+    {
+      "path": "book/chapter8.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter8.md",
+      "sha256": "000ee0097f74a53fdb4d6a2950b21cc5848a16e7d7501dce1ee7ad19bc366af7"
+    },
+    {
+      "path": "book/chapter9.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter9.md",
+      "sha256": "855e8b9af9cb72f891452542825fa5e2886e763af0429c715fc7d3a7f5a6592d"
+    },
+    {
+      "path": "book/chapter10.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/book/chapter10.md",
+      "sha256": "9d3ae92955cc8ca5fd8ed7e5e9f1bdb6ad6c6cf7aa3ea77cfee7931badaafd15"
+    },
+    {
+      "path": "chapter5/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/README.md",
+      "sha256": "479dfad5d1aeb3b4f5ef85677f71efcae0f733422f762dbdf8805f8d37c353fb"
+    },
+    {
+      "path": "chapter5/coding-agent/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter5/coding-agent/README.md",
+      "sha256": "63197a0332872c138735203283edd7d0efadc1be9dd3176d6ed4eb782a4b990a"
+    },
+    {
+      "path": "chapter2/context-compression/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter2/context-compression/README.md",
+      "sha256": "93a3fdc25e1f13e61ab66252bb41e29ff47b8a68928b53193ad64cb27fb4b7c7"
+    },
+    {
+      "path": "chapter3/structured-index/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter3/structured-index/README.md",
+      "sha256": "7864022f46a2ef962fbb1c6ae28d0f1d0efe72afe8edbb768934fc2ea659e97f"
+    },
+    {
+      "path": "chapter6/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter6/README.md",
+      "sha256": "6e938c5f3366caec75f22deeca1ecac9d4efc30f8027c5b2499349168b7aa668"
+    },
+    {
+      "path": "chapter6/agent-with-event-trigger/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter6/agent-with-event-trigger/README.md",
+      "sha256": "8b30be18ee4193f9ce8a9969830497f1c43cfd1af1b24e3c040176d4ecd2b099"
+    },
+    {
+      "path": "chapter7/user-memory-policy-eval/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter7/user-memory-policy-eval/README.md",
+      "sha256": "6772ef321dfeb86ddb5671f3a78fff4f2bb4e06a6f777ceae5e3b961ed8e2e87"
+    },
+    {
+      "path": "chapter8/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter8/README.md",
+      "sha256": "a3bf36f88b31af5747d0b14aafbb950bdc69251d8f8c78001295c059444f0e6d"
+    },
+    {
+      "path": "chapter9/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter9/README.md",
+      "sha256": "5e07be328e96433c8899ee6877603f6f0d2d26b3d3df9a1c91982b4eed0fd338"
+    },
+    {
+      "path": "chapter9/harness-safety-gate/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter9/harness-safety-gate/README.md",
+      "sha256": "3404fe69b104e746e7482bdbcf65289258ed2ee3fc6befc764a578755e9696cb"
+    },
+    {
+      "path": "chapter10/parallel-web-research/README.md",
+      "url": "https://github.com/bojieli/ai-agent-book/blob/dbc046eb896ac4e39aa19c7774c8bf49583b89a6/chapter10/parallel-web-research/README.md",
+      "sha256": "a1c7d8dc9c18c87a89a6854498625fce1b68a2b1d918c900444a483214d0cc08"
+    }
+  ],
+  "additionalPrimarySources": [
+    {
+      "url": "https://agentskills.io/specification",
+      "scope": "Required SKILL.md metadata and progressive disclosure"
+    },
+    {
+      "url": "https://microsoft.github.io/graphrag/",
+      "scope": "Entity/relationship extraction, community hierarchy and summaries"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.18059",
+      "scope": "RAPTOR abstract and hierarchical retrieval structure"
+    }
+  ],
+  "addedNotes": [
+    "ai-agent-book-comparison",
+    "agent-harness-coding",
+    "agent-context-skills-cache",
+    "agent-structured-memory",
+    "agent-event-interaction",
+    "agent-evaluation-coordination",
+    "agent-trajectory-learning"
+  ],
+  "addedResource": "bojieli-ai-agent-book",
+  "addedTrack": {
+    "slug": "agent-engineering-deep-dive",
+    "steps": 8
+  },
+  "totalPublished": {
+    "notes": 61,
+    "resources": 33,
+    "tracks": 10,
+    "actualLabs": 2
+  },
+  "execution": "Read-only research checkout; no upstream code imported, executed, API keys provisioned, model calls, training, weight downloads or hardware actions. Cases, calculations and tasks in new notes are original learning exercises.",
+  "comparison": "Existing broad AI curriculum retained. Six deeper topics cover Harness/Coding Agent, context/Skills/cache, structured memory, event interaction, evaluation/coordination, and trajectory learning."
+}

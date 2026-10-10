@@ -28,14 +28,14 @@ test('home and the full learning path navigate under the project base', async ({
 
 test('resource filters, empty results and reset preserve a usable list', async ({ page }) => {
   await page.goto('resources/');
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(32);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(33);
   await page.getByLabel('主题', { exact: true }).selectOption('rag');
   await page.getByLabel('资料类型').selectOption('paper');
   await expect(page.locator('[data-content-card]:visible')).toHaveCount(1);
   await page.getByLabel('标题或标签').fill('nothing-can-match-this');
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: '清除筛选' }).click();
-  await expect(page.locator('[data-content-card]:visible')).toHaveCount(32);
+  await expect(page.locator('[data-content-card]:visible')).toHaveCount(33);
   await expect(page).not.toHaveURL(/\?/);
 });
 
@@ -127,7 +127,7 @@ test('new learning modules are searchable and their map and sources work on mobi
   await expect(page.locator('.prose')).toContainText('2026-07-28');
   await expect(page.locator('.prose')).toContainText('许可迁移中');
   await page.goto('notes/ai-curriculum/');
-  await expect(page.locator('.prose')).toContainText('54 篇笔记');
+  await expect(page.locator('.prose')).toContainText('61 篇笔记');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: 'test-results/curriculum-mobile.png' });
   await page.locator('.prose').getByRole('link', { name: '传统 ML 支线', exact: true }).click();
@@ -166,11 +166,37 @@ test('practice route, cache results, licences and new terms can be read and sear
   await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(6);
 });
 
+test('Agent book comparison, sources and engineering path are connected and readable', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('search/?q=GraphRAG');
+  const input = page.locator('.pagefind-ui__search-input');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '结构化记忆与知识索引' }).first()).toBeVisible();
+  await input.fill('Harness');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: 'Harness 与 Coding Agent' }).first()).toBeVisible();
+  await input.fill('事件驱动');
+  await expect(page.locator('.pagefind-ui__result-link').filter({ hasText: '事件驱动 Agent' }).first()).toBeVisible();
+  await page.goto('notes/ai-agent-book-comparison/');
+  await expect(page.locator('.prose table').first().locator('tbody tr')).toHaveCount(10);
+  await page.screenshot({ path: 'test-results/agent-book-comparison-desktop.png' });
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.reload();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/agent-book-comparison-mobile.png' });
+  await page.locator('.prose').getByRole('link', { name: '八步 Agent 工程进阶', exact: true }).click();
+  await expect(page.getByRole('list', { name: '学习章节' }).locator('li')).toHaveCount(8);
+  await page.getByRole('link', { name: 'Agent 评估指标 轨迹边界与协作成本', exact: true }).click();
+  await expect(page.locator('.prose')).toContainText('99.2% 和 51.2%');
+  await page.getByRole('link', { name: '深入理解 AI Agent 设计原理与工程实践', exact: true }).click();
+  await expect(page.locator('.prose')).toContainText('Apache-2.0');
+  await expect(page.locator('.prose')).toContainText('不能解释为本站完成了 109 次实验');
+  await expect(page.locator('.prose').getByRole('link', { name: '第 7 章', exact: true })).toHaveAttribute('href', /dbc046eb896ac4e39aa19c7774c8bf49583b89a6\/book\/chapter7\.md$/);
+});
+
 test('RSS, missing articles and empty podcast route are honest', async ({ page, request }) => {
   const rss = await request.get('rss.xml');
   expect(rss.ok()).toBe(true);
   const xml = await rss.text();
-  expect((xml.match(/<item>/g) ?? []).length).toBe(54);
+  expect((xml.match(/<item>/g) ?? []).length).toBe(61);
   expect(xml).not.toContain('first-episode-draft');
   expect(xml).toContain('/notes/token-context/');
   expect(xml).toContain('/notes/ai-knowledge-map/');
@@ -179,6 +205,9 @@ test('RSS, missing articles and empty podcast route are honest', async ({ page, 
   expect(xml).toContain('/notes/data-drift-monitoring/');
   expect(xml).toContain('/notes/ai-application-roadmap/');
   expect(xml).toContain('/notes/retrieval-access-cache-lab/');
+  for (const slug of ['ai-agent-book-comparison', 'agent-harness-coding', 'agent-context-skills-cache', 'agent-structured-memory', 'agent-event-interaction', 'agent-evaluation-coordination', 'agent-trajectory-learning']) {
+    expect(xml).toContain(`/notes/${slug}/`);
+  }
   const draft = await request.get('episodes/first-episode-draft/');
   expect(draft.status()).toBe(404);
   await page.goto('episodes/');

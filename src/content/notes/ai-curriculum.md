@@ -1,22 +1,22 @@
 ---
 slug: ai-curriculum
 title: "AI 系统大纲：核心、支线与完成标准"
-summary: "对照 GitHub 教材与开放课程，组织 54 篇笔记的前置顺序、知识清单、支线和综合任务。"
+summary: "对照 GitHub 教材与开放课程，组织 61 篇笔记的前置顺序、知识清单、支线和综合任务。"
 kind: recap
 topic: foundations
 tags: [系统大纲, 知识清单, 开放课程, 查漏补缺]
 status: published
 publishedAt: "2026-10-07"
-updatedAt: "2026-10-08"
-lastReviewedAt: "2026-10-08"
-sources: [sklearn-user-guide, pytorch-basics-course, fastai-practical-course, google-ml-crash-course, google-recommendation-course, stanford-cs229-archive, made-with-ml-course, fsdl-production-course, scipy-statistics-guide, hf-llm-course]
+updatedAt: "2026-10-10"
+lastReviewedAt: "2026-10-10"
+sources: [sklearn-user-guide, pytorch-basics-course, fastai-practical-course, google-ml-crash-course, google-recommendation-course, stanford-cs229-archive, made-with-ml-course, fsdl-production-course, scipy-statistics-guide, hf-llm-course, bojieli-ai-agent-book]
 prerequisites: []
 related: [ai-knowledge-map, data-feature-pipelines, ml-metrics-validation, pytorch-training-practice, mlops-lifecycle]
 ---
 
 ## 大纲的范围与使用方式
 
-本大纲面向通用 AI 基础和应用工程，不把所有研究方向都算作初学必修。第二轮对照 scikit-learn、PyTorch、fast.ai、Google、CS229 历史讲义、Made With ML、FSDL 和 SciPy，补充 15 篇专题及本篇大纲。第三轮按应用开发、架构与面试补充。当前共 54 篇笔记、32 张资料卡、9 条路径；关键词检索与权限/缓存两篇包含实际运行的实验。
+本大纲面向通用 AI 基础和应用工程，不把所有研究方向都算作初学必修。第二轮对照 scikit-learn、PyTorch、fast.ai、Google、CS229 历史讲义、Made With ML、FSDL 和 SciPy，补充 15 篇专题及本篇大纲。第三轮按应用开发、架构与面试补充，第四轮对照 ai-agent-book 深化 Agent 工程。当前共 61 篇笔记、33 张资料卡、10 条路径；关键词检索与权限/缓存两篇包含实际运行的实验。
 
 前置关系表示阅读所需概念。下面将全体笔记编入阶段与支线；主线是起点，专题按任务补读。完成读物不等于具备生产经验，实践成绩需要真实日志支持。
 
@@ -36,10 +36,11 @@ related: [ai-knowledge-map, data-feature-pipelines, ml-metrics-validation, pytor
 | 9：任务支线 | [时序](../../notes/time-series-forecasting/)、[推荐](../../notes/recommendation-ranking/)、[视觉](../../notes/vision-foundations/)、[扩散](../../notes/diffusion-generation/)、[语音](../../notes/audio-asr-tts/) | 预测时点、候选/反馈、坐标、生成配置及模态指标 |
 | 10：开发实战 | [应用路线](../../notes/ai-application-roadmap/)、[服务后端](../../notes/ai-service-backend/)、[RAG 项目](../../notes/rag-capstone-spec/)、[权限/缓存实验](../../notes/retrieval-access-cache-lab/)、[Agent 验证](../../notes/agent-project-validation/)、[项目报告](../../notes/ai-project-evaluation/) | 服务契约、自己的项目与逐题结果、失败恢复及交付说明 |
 | 11：架构与面试 | [容量成本](../../notes/ai-capacity-cost/)、[系统设计](../../notes/ai-system-design/)、[SLO](../../notes/ai-slo-reliability/)、[面试案例](../../notes/ai-interview-casebook/) | 容量手算、数据流、决策、可靠性与证据复盘 |
+| 12：Agent 进阶 | [教材对照](../../notes/ai-agent-book-comparison/)、[Harness/Coding Agent](../../notes/agent-harness-coding/)、[Skills/缓存](../../notes/agent-context-skills-cache/)、[结构化记忆](../../notes/agent-structured-memory/)、[事件交互](../../notes/agent-event-interaction/)、[评估与协作](../../notes/agent-evaluation-coordination/)、[轨迹学习](../../notes/agent-trajectory-learning/) | 执行契约、上下文预算、关系与权限、事件时间线、行为题集及更新门禁 |
 
 评估不应等到训练之后才学习：阶段 1 就选划分和指标；阶段 7 再系统深化统计、校准与应用质量。时序、推荐和多模态按目标选修，不能替代共同的数据/评估基础。
 
-## 九条路径怎样选
+## 十条路径怎样选
 
 | 路径 | 定位 |
 | --- | --- |
@@ -52,6 +53,7 @@ related: [ai-knowledge-map, data-feature-pipelines, ml-metrics-validation, pytor
 | [MLOps 闭环](../../tracks/mlops-learning/) | 数据与行为测试、版本、统计、发布和监控 |
 | [7 步开发实战](../../tracks/ai-app-practice/) | 从全栈服务基础进入 RAG/agent 综合任务、权限实验与报告 |
 | [6 步架构与面试](../../tracks/ai-architecture-interview/) | 用已有项目练容量、边界、SLO、评估解释和案例 |
+| [8 步 Agent 工程进阶](../../tracks/agent-engineering-deep-dive/) | 已有应用基础后深化运行环境、Skills、记忆、事件、评估和改进 |
 
 支线列出的前置笔记若没掌握，先补读，不将路径清单误认为零基础直接可运行的命令。
 
@@ -66,6 +68,7 @@ related: [ai-knowledge-map, data-feature-pipelines, ml-metrics-validation, pytor
 | Made With ML / FSDL | 推理性能与安全已有，生命周期不完整 | 补数据/模型测试、版本、发布/回滚与漂移监控 |
 | 首轮 HF / Microsoft / Datawhale 等 | LLM、RAG、agent、多模态已有核心笔记 | 接入本大纲，扩展任务与训练支线，保留原始来源 |
 | 第三轮 LLM Zoomcamp / HF Agents / Primer / SRE Workbook | 概念覆盖较全，但项目交付与架构回答缺证据链 | 补服务、项目验收、缓存实测、评估报告、容量、可靠性和面试复盘 |
+| 第四轮 ai-agent-book | 执行循环、记忆、编排已有概览，缺 Coding Agent 运行环境和更细的行为验证 | 补六个 Agent 专题、十章对照和八步进阶路径，保留模型与硬件实验的条件 |
 
 这是本站编辑判断，不是课程发布者的评定。免费可读、开放代码许可、免费算力是三个问题，不能混写。CS229 当前课程材料需要校内账号；这里使用公开历史讲义，监督学习 PDF 内标注 2018/2019，不能称为 2026 新教材。
 
@@ -95,3 +98,5 @@ related: [ai-knowledge-map, data-feature-pipelines, ml-metrics-validation, pytor
 2026-10-07：AI 助手协助搜索、对照公开大纲和原始章节，原创组织本大纲；访问条件、固定版本和许可见资料卡。未执行新增训练或统计实验。
 
 2026-10-08：全量索引补到 54 篇；来源与许可见 [应用实战路线](../../notes/ai-application-roadmap/) 的四张资料卡。两条新路径保留已有基础为前置；只有新增权限/缓存实验实测，完整模型项目仍是执行任务。
+
+2026-10-10：全量索引补到 61 篇；[教材对照](../../notes/ai-agent-book-comparison/) 覆盖十章与六个缺口专题，来源固定为 2.0 书稿快照。新任务为设计与阅读练习，实际实验仍为两篇。

@@ -7,9 +7,9 @@ topic: engineering
 tags: ["实践路线","开发","架构","面试"]
 status: published
 publishedAt: "2026-10-08"
-updatedAt: "2026-10-08"
-lastReviewedAt: "2026-10-08"
-sources: ["llm-zoomcamp-practice","hf-agents-practice","system-design-primer","google-sre-workbook"]
+updatedAt: "2026-10-10"
+lastReviewedAt: "2026-10-10"
+sources: ["llm-zoomcamp-practice","hf-agents-practice","system-design-primer","google-sre-workbook","bojieli-ai-agent-book"]
 prerequisites: ["ai-knowledge-map"]
 related: ["ai-curriculum","rag-capstone-spec","ai-interview-casebook"]
 ---
@@ -44,6 +44,8 @@ related: ["ai-curriculum","rag-capstone-spec","ai-interview-casebook"]
 
 按 [应用开发实战路径](../../tracks/ai-app-practice/) 逐步完成。仓库的四份工作表在 docs/practice/，分别用于项目、评估、架构和面试复盘。
 
+Agent 项目需要进一步处理 Coding Agent 运行环境、Skills、结构化记忆、异步事件和轨迹改进时，接入 [八步 Agent 工程进阶](../../tracks/agent-engineering-deep-dive/)。[教材十章对照](../../notes/ai-agent-book-comparison/) 列明已有基础和补充专题。
+
 ## 架构与面试的后续路径
 
 完成一个可运行的应用后，沿 [架构与面试路径](../../tracks/ai-architecture-interview/) 学容量/成本、系统边界、SLO 和故障，再用真实项目练六类案例。架构图必须能解释文档更新、授权、请求超时、缓存和恢复怎样共同工作。
@@ -61,7 +63,7 @@ related: ["ai-curriculum","rag-capstone-spec","ai-interview-casebook"]
 
 ## 本轮完成与尚需执行
 
-本轮新增 10 篇笔记、4 张资料卡和 2 条路径，现有全站 54 篇笔记、32 张资料卡、9 条路径。两篇实验均有实际脚本与记录：关键词检索、权限与缓存；其余设计任务和手算都有明确标注。
+2026-10-08 的应用补充新增 10 篇笔记、4 张资料卡和 2 条路径。2026-10-10 再加入 Agent 教材对照后，全站为 61 篇笔记、33 张资料卡、10 条路径。两篇实验均有实际脚本与记录：关键词检索、权限与缓存；其余设计任务和手算都有明确标注。
 
 完整模型问答、agent 执行、负载与真实费用测量是学习者后续执行的项目任务，本轮没有调用模型 API、训练、下载权重或发布线上服务。不要把这些任务表当成已经完成的模型应用。
 
@@ -79,3 +81,5 @@ related: ["ai-curriculum","rag-capstone-spec","ai-interview-casebook"]
 - [官方章节](https://sre.google/workbook/implementing-slos/)
 
 2026-10-08：AI 助手协助原创组织与核对来源；案例、练习与手算的执行状态见正文；不把学习任务视为已完成的模型或线上实验。
+
+2026-10-10：接入 Agent 工程进阶与教材对照，更新当前内容总量。

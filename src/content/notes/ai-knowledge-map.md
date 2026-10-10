@@ -1,15 +1,15 @@
 ---
 slug: ai-knowledge-map
 title: "AI 知识地图：八个模块与学习顺序"
-summary: "把常见 AI 方向组织成 8 个模块、54 篇笔记与 9 条路径，按前置知识、练习和原始来源学习。"
+summary: "把常见 AI 方向组织成 8 个模块、61 篇笔记与 10 条路径，按前置知识、练习和原始来源学习。"
 kind: concept
 topic: foundations
 tags: [知识地图, 学习顺序, GitHub]
 status: published
 publishedAt: "2026-10-07"
-updatedAt: "2026-10-08"
-lastReviewedAt: "2026-10-08"
-sources: [d2l-zh-course, ml-beginners-course, genai-beginners-course, agents-beginners-course, hf-llm-course, hf-smol-course, hf-diffusers-docs, hf-audio-course, hf-rl-course, datawhale-llm-universe, datawhale-hello-agents, mcp-specification, vllm-serving-docs, ragas-evaluation-docs]
+updatedAt: "2026-10-10"
+lastReviewedAt: "2026-10-10"
+sources: [d2l-zh-course, ml-beginners-course, genai-beginners-course, agents-beginners-course, hf-llm-course, hf-smol-course, hf-diffusers-docs, hf-audio-course, hf-rl-course, datawhale-llm-universe, datawhale-hello-agents, mcp-specification, vllm-serving-docs, ragas-evaluation-docs, bojieli-ai-agent-book]
 prerequisites: []
 related: [ai-curriculum, machine-learning-workflow, model-selection, prompt-design, rag-ingestion-chunking, agent-control-loop, llm-evaluation, serving-performance, vision-foundations]
 ---
@@ -18,7 +18,7 @@ related: [ai-curriculum, machine-learning-workflow, model-selection, prompt-desi
 
 先区分 AI 的层次：机器学习从数据学习规律，深度学习用多层网络，生成式模型生成内容；RAG、agent 和 MCP 属于应用方法或接口体系，不能与模型权重混为一谈。
 
-首轮根据 14 个 GitHub 教材与维护者仓库整理；第二轮加入 9 张 GitHub/开放学习平台资料卡，补齐传统算法、训练实践、统计和工程闭环；第三轮补开发项目、架构与面试。当前共 54 篇笔记、32 张资料卡、9 条路径。八个模块保留为导航；全部篇目、阶段、选修和综合任务见 [AI 系统大纲](../../notes/ai-curriculum/)。
+首轮根据 14 个 GitHub 教材与维护者仓库整理；第二轮加入 9 张 GitHub/开放学习平台资料卡，补齐传统算法、训练实践、统计和工程闭环；第三轮补开发项目、架构与面试；第四轮对照 ai-agent-book 深化 Agent。当前共 61 篇笔记、33 张资料卡、10 条路径。八个模块保留为导航；全部篇目、阶段、选修和综合任务见 [AI 系统大纲](../../notes/ai-curriculum/)。
 
 ## 八个模块的知识点
 
@@ -47,6 +47,10 @@ related: [ai-curriculum, machine-learning-workflow, model-selection, prompt-desi
 
 对应平台、访问条件、年份和来源比较见 [系统大纲](../../notes/ai-curriculum/) 及其资料卡。这些缺口是对照本项目后的编辑判断。
 
+## Agent 进阶补充
+
+对照 [ai-agent-book 十章](../../notes/ai-agent-book-comparison/)，新增 [Harness/Coding Agent](../../notes/agent-harness-coding/)、[Skills 与缓存](../../notes/agent-context-skills-cache/)、[结构化记忆](../../notes/agent-structured-memory/)、[事件交互](../../notes/agent-event-interaction/)、[评估与协作](../../notes/agent-evaluation-coordination/) 和 [轨迹学习](../../notes/agent-trajectory-learning/)。这组专题衔接已有执行循环、RAG、记忆和工具基础；来源、版本和实验条件见 [教材资料卡](../../resources/bojieli-ai-agent-book/)。
+
 ## 选一条学习路径
 
 | 路径 | 适合什么目标 | 完成后留下什么 |
@@ -60,6 +64,7 @@ related: [ai-curriculum, machine-learning-workflow, model-selection, prompt-desi
 | [MLOps 支线](../../tracks/mlops-learning/) | 想形成可复现交付与监控闭环 | 版本、测试、发布/回滚、漂移调查 |
 | [应用开发实战](../../tracks/ai-app-practice/) | 已有全栈基础，想完成可复核 AI 应用 | 服务契约、RAG/agent 项目、权限实验与评估报告 |
 | [架构与面试](../../tracks/ai-architecture-interview/) | 已有项目，想解释容量、故障和设计选择 | 容量成本、SLO、架构决策与案例复盘 |
+| [Agent 工程进阶](../../tracks/agent-engineering-deep-dive/) | 已有应用基础，想深化运行与改进机制 | 运行契约、事件状态、行为评估及更新记录 |
 
 主线按前置关系安排。支线先检查篇目前置知识，缺哪部分就补哪部分；不要求第一次阅读就完成 GPU 训练或所有 API 实验。
 
@@ -88,3 +93,5 @@ related: [ai-curriculum, machine-learning-workflow, model-selection, prompt-desi
 2026-10-07：两轮 AI 助手协助搜索与原创整理；第二轮对照 GitHub 及开放课程，查阅章节、快照、许可与访问条件，更新系统大纲及路径。未下载模型权重、运行训练或调用收费模型服务。
 
 2026-10-08：补充四组工程资料、10 篇笔记和两条实践路径，实际复现权限/缓存问题与版本漏更新边界；没有调用模型 API 或发布线上服务。
+
+2026-10-10：对照 ai-agent-book 2.0，新增六篇专题、一篇对照和一条进阶路径。设计案例与上游实验结果分别标注，未执行上游模型或硬件项目。
